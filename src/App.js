@@ -5,6 +5,7 @@ import { createTheme, ThemeProvider, responsiveFontSizes, Box } from '@mui/mater
 
 // import pages
 import LandingPage from './pages/LandingPage';
+import BlogPage from './pages/BlogPage';
 import Error404Page from './pages/Error404Page';
 
 import Header from './components/layout/General/Header/Header';
@@ -81,6 +82,7 @@ function Root() {
           <Box sx={styles.container}>
             <Routes>
               <Route path="/" element={<LandingPage />} />
+              <Route path="/blog" element={<BlogPage />} />
               <Route path="*" element={<Error404Page />} />
             </Routes>   
           </Box>

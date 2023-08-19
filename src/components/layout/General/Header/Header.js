@@ -14,8 +14,7 @@ function Header() {
             </Link>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 <Link href='/' underline="none" sx={{ padding: "15px", paddingLeft: "0px", color: 'black' }}>NewsletterDude</Link>
-                {/* <Link href='/tools' underline="none" sx={{ padding: "15px", color: 'black' }}>Tools</Link>
-                <Link href='/challenges' underline="none" sx={{ padding: "15px", color: 'black' }}>Challenges</Link> */}
+                <Link href='/blog' underline="none" sx={{ padding: "15px", color: 'black' }}>Blog</Link>
             </Typography>
         </Toolbar>
       </AppBar>
