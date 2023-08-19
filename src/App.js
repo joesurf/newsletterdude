@@ -10,7 +10,7 @@ import LandingPage from './pages/LandingPage';
 import Error404Page from './pages/Error404Page';
 // import ChallengePage from './pages/ChallengePage';
 
-import Header from './components/layout/General/Header';
+import Header from './components/layout/General/Header/Header';
 import Footer from './components/layout/General/Footer/Footer';
 
 

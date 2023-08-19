@@ -1,8 +1,7 @@
-import InstagramIcon from "@mui/icons-material/Instagram";
+// import InstagramIcon from "@mui/icons-material/Instagram";
 // import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import Logo from "../../../../assets/avatarlogo.png";
-import { Typography, Link, Grid, Box, Paper } from "@mui/material";
+import Logo from "../../../../assets/NewsletterDudeLogo.png";
+import { Typography, Grid, Box, Paper } from "@mui/material";
 
 
 const Footer = () => {
@@ -26,7 +25,7 @@ const Footer = () => {
               My Mission.
             </Typography>
             <Typography variant="body1">
-              Documenting my reflections, sharing my learnings, and going on the journey with you.
+              The only guide you will ever need to build a newsletter for personal or business needs.
             </Typography>
           </Box>
         </Grid>
@@ -38,7 +37,7 @@ const Footer = () => {
               hey@joesurf.io
             </Typography>
             <Grid container sx={{ mt: "5px", textAlign: "center" }}>
-              <Box>
+              {/* <Box>
                 <Link
                   href="https://www.instagram.com/joesurfthedude/"
                   underline="none"
@@ -47,31 +46,11 @@ const Footer = () => {
                 >
                   <InstagramIcon fontSize="large" />
                 </Link>
-              </Box>
-              <Box>
-                <Link
-                  href="https://www.linkedin.com/in/joesurf/"
-                  underline="none"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <LinkedInIcon fontSize="large" />
-                </Link>
-              </Box>
-              {/* <Box>
-                <Link
-                  href="https://notiondudestore.gumroad.com"
-                  underline="none"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <StoreIcon fontSize="large" />
-                </Link>
               </Box> */}
             </Grid>
         </Grid>
       </Grid>
-      <Typography variant="body2"><i>Copyright 2023 Joesurf</i></Typography>
+      <Typography variant="body2"><i>Copyright 2023 NewsletterDude</i></Typography>
 
     </Paper>
   );
