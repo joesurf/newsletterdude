@@ -3,12 +3,9 @@ import { createBrowserRouter, RouterProvider, Routes, Route } from 'react-router
 import { createTheme, ThemeProvider, responsiveFontSizes, Box } from '@mui/material';
 
 
-
 // import pages
 import LandingPage from './pages/LandingPage';
-// import ToolsPage from './pages/ToolsPage';
 import Error404Page from './pages/Error404Page';
-// import ChallengePage from './pages/ChallengePage';
 
 import Header from './components/layout/General/Header/Header';
 import Footer from './components/layout/General/Footer/Footer';
@@ -84,8 +81,6 @@ function Root() {
           <Box sx={styles.container}>
             <Routes>
               <Route path="/" element={<LandingPage />} />
-              {/* <Route path="/tools" element={<ToolsPage />} />
-              <Route path="/challenges" element={<ChallengePage />} /> */}
               <Route path="*" element={<Error404Page />} />
             </Routes>   
           </Box>
