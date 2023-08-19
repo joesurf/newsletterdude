@@ -25,7 +25,7 @@ const Footer = () => {
               My Mission.
             </Typography>
             <Typography variant="body1">
-              The only guide you will ever need to build a newsletter for personal or business needs.
+              The newsletter that helps you build newsletters.
             </Typography>
           </Box>
         </Grid>
