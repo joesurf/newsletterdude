@@ -9,7 +9,7 @@ export function RoadmapNode({ data }) {
 
   return (
     <Box sx={{ width: 200, border: "1.5px solid" }}>
-      <Handle type="target" position={Position.Top} />
+      <Handle type="target" position={Position.Top} id="top" />
       <Handle type="target" position={Position.Left} id="left" />
       <Box sx={{ padding: 1 }}>
         {data.icon}
