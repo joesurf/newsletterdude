@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import ReactFlow, {
   Controls,
   Background,
@@ -14,6 +14,15 @@ import { TimelineNode } from '../ReactflowNode/TimelineNode';
 
 
 export default function Flowchart({ initialNodes, initialEdges }) {
+  const [chartWidth, setChartWidth] = useState(window.innerWidth)
+
+  useEffect(() => {
+    function handleResize() {
+      setChartWidth(window.innerWidth)
+    } 
+
+    window.addEventListener('resize', handleResize)
+  }, [])
 
     const nodeTypes = useMemo(() => ({ 
         roadmap: RoadmapNode, 
@@ -30,7 +39,7 @@ export default function Flowchart({ initialNodes, initialEdges }) {
   const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
 
   return (
-    <div style={{ width: window.innerWidth * 0.8, height: 500, margin: 'auto' }}>
+    <div style={{ width: { xs: chartWidth * 0.9, sm: chartWidth * 0.8 }, maxWidth: "1300px", height: 500, margin: 'auto' }}>
       <ReactFlow
         nodeTypes={nodeTypes}
         nodes={nodes}

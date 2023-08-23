@@ -1,5 +1,6 @@
 import React from 'react'
 import Flowchart from '../../UI/Flowchart/Flowchart'
+import { Box } from '@mui/material';
 
 import { MarkerType } from 'reactflow';
 
@@ -139,7 +140,9 @@ function RoadmapFlowchart() {
       ];
 
   return (
+   <Box>
     <Flowchart initialNodes={initialNodes} initialEdges={initialEdges} />
+    </Box> 
   )
 }
 
