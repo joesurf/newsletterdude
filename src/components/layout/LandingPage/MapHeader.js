@@ -13,8 +13,9 @@ function MapHeader() {
             <Divider />
             <Typography variant="h5" marginTop="15px" marginBottom="20px">
                 A step-by-step roadmap to building your own newsletter, with 
-                a comprehensive guide for each step in the form of an article. Click 
-                and move around each step if you would like to try something else!
+                a comprehensive guide for each step in the form of an article. 
+                Drag the map around to see other steps and click on each step to 
+                find out more!
             </Typography>  
         </Box>
     )
