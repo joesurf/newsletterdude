@@ -16,19 +16,19 @@ function Introduction() {
       });
       
       typewriter
-        .typeString('Tools')
+        .typeString('Email Platform')
+        .pauseFor(1000)
+        .deleteChars(14)
+        .typeString('Team Management')
+        .pauseFor(1000)
+        .deleteChars(15)
+        .typeString('Marketing')
+        .pauseFor(1000)
+        .deleteChars(9)
+        .typeString('Sales')
         .pauseFor(1000)
         .deleteChars(5)
-        .typeString('Frameworks')
-        .pauseFor(1000)
-        .deleteChars(10)
-        .typeString('Models')
-        .pauseFor(1000)
-        .deleteChars(6)
-        .typeString('Books')
-        .pauseFor(1000)
-        .deleteChars(5)
-        .typeString('Quotes')
+        .typeString('Automation')
         .pauseFor(1000)
         .start()
     }
@@ -38,7 +38,7 @@ function Introduction() {
   return (
     <div>
         <h2>
-          <span style={{ color: "grey" }}>Explore: </span>
+          <span style={{ color: "grey" }}>Explore Tools: </span>
           <span id="intro__type"></span>
         </h2>
         <Divider />

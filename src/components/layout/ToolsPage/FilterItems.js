@@ -2,22 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { Grid, Box } from '@mui/material';
 import { ItemCard } from './ItemCard';
 
-export default function FilterItems({searchstring, list, category, type}) {
+export default function FilterItems({searchstring, list, category}) {
 
 
     const [filteredList, setFilteredList] = useState([]);
 
     useEffect(() => {
         setFilteredList(
-            list
-                .filter((element) => {
-                    if (type === '') {
-                        return element;
-                    }
-                    else {
-                        return element.type.toLowerCase() === type
-                    }
-                })        
+            list     
                 .filter((element) => {
                     if (category === '') {
                         return element;
@@ -35,7 +27,7 @@ export default function FilterItems({searchstring, list, category, type}) {
                     }
                 })
         )
-    }, [list, type, category, searchstring])
+    }, [list, category, searchstring])
 
     return (
         <Box>
