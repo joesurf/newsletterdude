@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import './Header.css';
-import { Paper, Box, IconButton, Link, Toolbar, Typography, useTheme } from '@mui/material';
+import { Paper, Box, Menu, MenuItem, IconButton, Link, Toolbar, Typography, useTheme } from '@mui/material';
 import { ColorModeContext, tokens } from '../../../../theme';
 import logo from '../../../../assets/NewsletterDudeLogo.png';
 
@@ -16,6 +16,10 @@ function Header() {
   const colorMode = useContext(ColorModeContext);
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const [menuState, setMenuState] = useState(false)
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
 
   useEffect(() => {
     function handleResize() {
@@ -25,9 +29,16 @@ function Header() {
     window.addEventListener('resize', handleResize)
   }, [])
 
-  const toggleMenu = () => {
-    console.log("open/close")
+  const toggleMenu = (event) => {
+    setMenuState(true)
+    setAnchorEl(event.currentTarget);
+
   }
+
+  const handleClose = () => {
+    setMenuState(false)
+    setAnchorEl(null);
+  };
 
   return (
     <Paper>
@@ -39,18 +50,48 @@ function Header() {
         </Box>
         <Toolbar>
           {windowWidth < 450 
-            ? 
-            <Box display="flex">
+            ? <Box display="flex">
               <IconButton onClick={toggleMenu}>
-                <MenuIcon />
+                <MenuIcon sx={{ transform: menuState ? "rotate(90deg)" : "" }} />
               </IconButton>
+              <Menu
+                id="basic-menu"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                MenuListProps={{
+                  'aria-labelledby': 'basic-button',
+                }}
+              >
+                <MenuItem onClick={handleClose}>
+                  <Link href='/' underline="none" sx={{ color: colors.grey[100] }}>
+                    <Typography variant="h6">
+                      Roadmap
+                    </Typography>
+                  </Link>
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                  <Link href='/blog' underline="none" sx={{ color: colors.grey[100] }}>
+                    <Typography variant="h6">
+                      Blog
+                    </Typography>
+                  </Link>
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                  <Link href='/tools' underline="none" sx={{ color: colors.grey[100] }}>
+                    <Typography variant="h6">
+                      Tools
+                    </Typography>
+                  </Link>
+                </MenuItem>
+              </Menu>
             </Box>
             
             : (
             <Box display="flex">
               <Link href='/' underline="none" sx={{ padding: "15px", color: colors.grey[100] }}>
                 <Typography variant="h4" sx={{ flexGrow: 1 }}>
-                  NewsletterDude
+                  Roadmap
                 </Typography>
               </Link>
               <Link href='/blog' underline="none" sx={{ padding: "15px", color: colors.grey[100] }}>
