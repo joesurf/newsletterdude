@@ -30,12 +30,12 @@ export default function Flowchart({ initialNodes, initialEdges }) {
   const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
 
   return (
-    <div style={{ width: window.innerWidth * 0.8, height: 500, margin: 'auto' }}>
+    <div style={{ width: window.innerWidth * 0.8, height: 700, margin: 'auto' }}>
       <ReactFlow
         nodeTypes={nodeTypes}
         nodes={nodes}
         edges={edges}
-        onNodesChange={onNodesChange}
+        // onNodesChange={onNodesChange}
         // onEdgesChange={onEdgesChange}
         // onConnect={onConnect}
         panOnScroll={false}
