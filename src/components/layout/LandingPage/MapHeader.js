@@ -1,17 +1,22 @@
 import React from 'react'
-import { Divider } from '@mui/material'
+import { Box, Divider, Typography, useTheme } from '@mui/material'
+import { tokens } from '../../../theme';
+
 
 function MapHeader() {
+    const theme = useTheme();
+    const colors = tokens(theme.palette.mode)
+
     return (
-        <div>
-            <h2 style={{ marginBottom: "5px" }}><span style={{ color: "grey" }}>Newsletter:</span> Roadmap</h2>
+        <Box>
+            <Typography variant="h1" sx={{ marginBottom: "5px" }}><span style={{ color: colors.grey[500] }}>Newsletter:</span> Roadmap</Typography>
             <Divider />
-            <p>
+            <Typography variant="h5" marginTop="15px" marginBottom="20px">
                 A step-by-step roadmap to building your own newsletter, with 
                 a comprehensive guide for each step in the form of an article. Click 
                 and move around each step if you would like to try something else!
-            </p>  
-        </div>
+            </Typography>  
+        </Box>
     )
 }
 
