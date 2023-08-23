@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
 import { Handle, Position } from 'reactflow';
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, Typography, useTheme } from '@mui/material';
 import './RoadmapNode.css'
 import ConfirmDialog from '../ConfirmDialog/ConfirmDialog';
+
+import { tokens } from '../../../theme';
+
+
 
 export function RoadmapNode({ data }) {
   // const onChange = useCallback((evt) => {
   //   console.log(evt.target.value);
   // }, []);
+
+  const theme = useTheme();
+  // eslint-disable-next-line
+  const colors = tokens(theme.palette.mode);
 
   const [infoOpen, setInfoOpen] = useState(false);
 
@@ -37,9 +45,12 @@ export function RoadmapNode({ data }) {
       <Handle type="target" position={Position.Right} id="right" />
       <Box sx={{ padding: 1 }}>
         {data.icon}
-        <Typography variant="body2" sx={{ color: "grey" }}>{data.id}</Typography>
-        <Typography variant="body1" sx={{ color: "black" }}>{data.description}</Typography>
-        <Button sx={{ backgroundColor: "#e0e0e0", color: "black", padding: 0, fontSize: 10 }}>Newsletter {'>'} Learn</Button>
+        <Typography variant="h6" sx={{ color: "grey" }}>{data.id}</Typography>
+        <Typography variant="h5" sx={{ color: colors.grey[100] }}>{data.description}</Typography>
+        <Button sx={{ 
+          backgroundColor: colors.grey[400], color: colors.grey[900], padding: 0, paddingLeft: 1, paddingRight: 1, fontSize: 9,
+          "&:hover": { backgroundColor: colors.grey[400] }
+        }}>Newsletter {'>'} Learn</Button>
       </Box>
       <ConfirmDialog
             open={infoOpen}
@@ -49,13 +60,13 @@ export function RoadmapNode({ data }) {
           <Typography variant="h2" sx={{ fontWeight: "bold" }}>
             {data.description}
           </Typography>
-          <Typography variant="body2">
+          <Typography variant="h6">
             {data.id}
           </Typography>
-          <Typography variant="body1">
+          <Typography variant="h5">
             {data.framework ? data.framework : "Framework"}
           </Typography>          
-          <Typography onClick={openLink} variant="body2" sx={{ 
+          <Typography onClick={openLink} variant="h6" sx={{ 
             textDecoration: "underline",
             "&:hover": { cursor: "pointer" }
           }}>
