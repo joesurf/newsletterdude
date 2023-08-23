@@ -32,7 +32,6 @@ function Header() {
   const toggleMenu = (event) => {
     setMenuState(true)
     setAnchorEl(event.currentTarget);
-
   }
 
   const handleClose = () => {
