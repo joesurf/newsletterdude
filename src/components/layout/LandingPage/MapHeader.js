@@ -11,7 +11,7 @@ function MapHeader() {
         <Box>
             <Typography variant="h1" sx={{ marginBottom: "5px" }}><span style={{ color: colors.grey[500] }}>Newsletter:</span> Roadmap</Typography>
             <Divider />
-            <Typography variant="h5" marginTop="15px" marginBottom="20px">
+            <Typography variant="h4" marginTop="15px" marginBottom="20px">
                 A step-by-step roadmap to building your own newsletter, with 
                 a comprehensive guide for each step in the form of an article. 
                 Drag the map around to see other steps and click on each step to 

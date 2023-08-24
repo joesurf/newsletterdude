@@ -50,10 +50,10 @@ export const ItemCard = (props) => {
         />
       </CardMedia>
       <CardContent>
-        <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+        <Typography variant="h4" sx={{ fontWeight: "bold" }}>
           {props.title}
         </Typography>
-        <Typography variant="body2">
+        <Typography variant="h6">
           {props.description.length < 100 ? props.description : props.description.slice(0, 100) + findEarliestWord(props.description.slice(100)) + "..."}
         </Typography>
       </CardContent>

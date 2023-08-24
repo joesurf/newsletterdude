@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Divider } from '@mui/material'
+import { Divider, Typography } from '@mui/material'
 import Typewriter from 'typewriter-effect/dist/core';
 import './Introduction.css'
 
@@ -37,15 +37,16 @@ function Introduction() {
 
   return (
     <div>
-        <h2>
-          <span style={{ color: "grey" }}>Explore Tools: </span>
+        <Typography variant="h1" fontWeight="bold">
+          <span style={{ color: "grey" }}>Explore: </span>
           <span id="intro__type"></span>
-        </h2>
+        </Typography>
         <Divider />
-        <p>
+        <Typography variant="h4" marginTop="10px" marginBottom="10px">
           Tools accelerate our life and allow us to save time and focus on the 
-          things that really matter.
-        </p>
+          things that really matter. Find the software you need, based on your business 
+          purpose.
+        </Typography>
         
     </div>
   )
