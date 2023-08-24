@@ -7,7 +7,7 @@ import { Typography, Grid, Box, Paper } from "@mui/material";
 const Footer = () => {
   return (
     <Paper
-      elevation={20}
+      elevation={1}
       sx={{
         padding: { xs: "2rem" },
         mt: "30px",
