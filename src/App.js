@@ -7,52 +7,17 @@ import { CssBaseline, ThemeProvider } from '@mui/material';
 
 
 // import pages
+import HomePage from './pages/HomePage';
 import RoadmapPage from './pages/RoadmapPage';
 import BlogPage from './pages/BlogPage';
 import ToolsPage from './pages/ToolsPage';
 import DashboardPage from './pages/DashboardPage';
+import CommunityPage from './pages/CommunityPage';
 import Error404Page from './pages/Error404Page';
 
 import Header from './components/layout/General/Header/Header';
 import Footer from './components/layout/General/Footer/Footer';
 
-
-// let theme = createTheme({
-//   palette: {
-//     type: "light",
-//     primary: {
-//       main: "#00203F",
-//     },
-//     secondary: {
-//       main: "#47D68F",
-//     },
-//     text: {
-//       primary: "#00203F",
-//     },
-//     info: {
-//       main: "#2E5994",
-//     },
-//   },
-//   typography: {
-//     fontFamily: ["Montserrat"].join("", ""),
-//     body1: {
-//       fontFamily: "Inter",
-//       fontSize: 18,
-//       fontWeight: 400,
-//       letterSpacing: -0.3,
-//     },
-//     body2: {
-//       fontFamily: "Inter",
-//     },
-//     h6: {
-//       letterSpacing: -0.3,
-//       lineHeight: 1.4,
-//     },
-//     caption: {
-//       fontFamily: "Inter",
-//     },
-//   },
-// });
 
 const styles = {
   container: {
@@ -61,8 +26,6 @@ const styles = {
     margin: "2.5rem auto",
   },
 };
-
-// theme = responsiveFontSizes(theme);
 
 
 // 3️⃣ Router singleton created
@@ -91,10 +54,12 @@ function Root() {
               <Header />
               <Box sx={styles.container}>
                 <Routes>
-                  <Route path="/" element={<RoadmapPage />} />
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/roadmap" element={<RoadmapPage />} />
                   <Route path="/blog" element={<BlogPage />} />
                   <Route path="/tools" element={<ToolsPage />} />
                   <Route path="/data" element={<DashboardPage />} />
+                  <Route path="/community" element={<CommunityPage />} />
                   <Route path="*" element={<Error404Page />} />
                 </Routes>   
               </Box>

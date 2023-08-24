@@ -10,7 +10,7 @@ const Footer = () => {
       elevation={20}
       sx={{
         padding: { xs: "2rem" },
-        mt: "30px", borderRadius: 5,
+        mt: "30px",
       }}
     >
       <Grid container columnSpacing={10} rowSpacing={0}>

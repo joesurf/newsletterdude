@@ -9,6 +9,23 @@ import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
 
 
+const MENUCOLLAPSEWIDTH = 600
+const MENU_SECTIONS = [
+  {
+    "title": "Roadmap",
+  },
+  {
+    "title": "Blog",
+  },
+  {
+    "title": "Tools",
+  },
+  {
+    "title": "Community",
+  },
+]
+
+
 function Header() {
   const theme = useTheme();
   // eslint-disable-next-line
@@ -48,7 +65,7 @@ function Header() {
           </Link>
         </Box>
         <Toolbar>
-          {windowWidth < 450 
+          {windowWidth < MENUCOLLAPSEWIDTH 
             ? <Box display="flex">
               <IconButton onClick={toggleMenu}>
                 <MenuIcon sx={{ transform: menuState ? "rotate(90deg)" : "" }} />
@@ -62,47 +79,31 @@ function Header() {
                   'aria-labelledby': 'basic-button',
                 }}
               >
-                <MenuItem onClick={handleClose}>
-                  <Link href='/' underline="none" sx={{ color: colors.grey[100] }}>
-                    <Typography variant="h6">
-                      Roadmap
-                    </Typography>
-                  </Link>
-                </MenuItem>
-                <MenuItem onClick={handleClose}>
-                  <Link href='/blog' underline="none" sx={{ color: colors.grey[100] }}>
-                    <Typography variant="h6">
-                      Blog
-                    </Typography>
-                  </Link>
-                </MenuItem>
-                <MenuItem onClick={handleClose}>
-                  <Link href='/tools' underline="none" sx={{ color: colors.grey[100] }}>
-                    <Typography variant="h6">
-                      Tools
-                    </Typography>
-                  </Link>
-                </MenuItem>
+                {MENU_SECTIONS.map(section => {
+                  return (
+                    <MenuItem onClick={handleClose}>
+                      <Link href={`/${section.title.toLowerCase()}`} underline="none" sx={{ color: colors.grey[100] }}>
+                        <Typography variant="h6">
+                          {section.title}
+                        </Typography>
+                      </Link>
+                    </MenuItem>
+                  )
+                })}
               </Menu>
             </Box>
             
             : (
             <Box display="flex">
-              <Link href='/' underline="none" sx={{ padding: "15px", color: colors.grey[100] }}>
-                <Typography variant="h4" sx={{ flexGrow: 1 }}>
-                  Roadmap
-                </Typography>
-              </Link>
-              <Link href='/blog' underline="none" sx={{ padding: "15px", color: colors.grey[100] }}>
-                <Typography variant="h4" sx={{ flexGrow: 1 }}>
-                  Blog
-                </Typography>
-              </Link>
-              <Link href='/tools' underline="none">
-                <Typography variant="h4" sx={{ flexGrow: 1, padding: "15px", color: colors.grey[100] }}>
-                  Tools
-                </Typography>
-              </Link>
+              {MENU_SECTIONS.map(section => {
+                return (
+                  <Link href={`/${section.title.toLowerCase()}`} underline="none" sx={{ padding: "15px", color: colors.grey[100] }}>
+                  <Typography variant="h4" sx={{ flexGrow: 1 }}>
+                    {section.title}
+                  </Typography>
+                </Link>
+                )
+              })}
             </Box>
           )}
         </Toolbar>
