@@ -39,7 +39,7 @@ export default function Flowchart({ initialNodes, initialEdges }) {
   const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
 
   return (
-    <div style={{ width: { xs: chartWidth * 0.9, sm: chartWidth * 0.8 }, maxWidth: "1300px", height: 500, margin: 'auto' }}>
+    <div style={{ width: { xs: chartWidth * 0.9, sm: chartWidth * 0.8 }, maxWidth: "1300px", height: 600, margin: 'auto' }}>
       <ReactFlow
         nodeTypes={nodeTypes}
         nodes={nodes}

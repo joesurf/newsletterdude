@@ -7,7 +7,7 @@ import { CssBaseline, ThemeProvider } from '@mui/material';
 
 
 // import pages
-import LandingPage from './pages/LandingPage';
+import RoadmapPage from './pages/RoadmapPage';
 import BlogPage from './pages/BlogPage';
 import ToolsPage from './pages/ToolsPage';
 import DashboardPage from './pages/DashboardPage';
@@ -91,7 +91,7 @@ function Root() {
               <Header />
               <Box sx={styles.container}>
                 <Routes>
-                  <Route path="/" element={<LandingPage />} />
+                  <Route path="/" element={<RoadmapPage />} />
                   <Route path="/blog" element={<BlogPage />} />
                   <Route path="/tools" element={<ToolsPage />} />
                   <Route path="/data" element={<DashboardPage />} />
