@@ -65,7 +65,9 @@ function PriceWrapper(props) {
       borderWidth="1px"
       alignSelf={{ base: 'flex-start' }}
       borderColor={useColorModeValue('gray.200', 'gray.500')}
-      borderRadius={'xl'}>
+      borderRadius={'xl'}
+      mx={{ base: 'auto', md: '0' }}
+    >
       {children}
     </Box>
   )
@@ -112,19 +114,19 @@ export default function ThreeTierPricing() {
       <Stack
         direction={{ base: 'column', md: 'row' }}
         textAlign="center"
-        justify="center"
-        spacing={{ base: 4, lg: 10 }}
-        py={3}>
+        spacing={8}
+        justifyContent="center"
+        py={3}
+      >
 
         {SUBSCRIPTIONS.map((subscription, i) => {
           return (
           <PriceWrapper key={i}>
-            <Box position="relative">
+            <Box>
               <Box
                 position="absolute"
                 top="-16px"
-                left="50%"
-                style={{ transform: 'translate(-50%)' }}>
+                >
                 {/* <Typography
                   variant="h6"
                   backgroundColor={colors.redAccent[700]}
