@@ -9,7 +9,7 @@ export default function Cta() {
 
   return (
     <section style={{"position":"relative"}}>
-      <div style={{"paddingLeft":"1rem","paddingRight":"1rem","maxWidth":"72rem","@media (minWidth: 640px)":{"paddingLeft":"1.5rem","paddingRight":"1.5rem"}, backgroundColor: colors.grey[900]}}>
+      <div style={{"paddingLeft":"1rem","paddingRight":"1rem","@media (minWidth: 640px)":{"paddingLeft":"1.5rem","paddingRight":"1.5rem"}, backgroundColor: colors.grey[900]}}>
         {/* Hero content */}
         <div style={{"paddingBottom":"5rem","paddingTop":"8rem","@media (minWidth: 768px)":{"paddingBottom":"8rem","paddingTop":"13rem"}}}>
           {/* Section header */}
