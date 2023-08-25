@@ -79,9 +79,9 @@ function Header() {
                   'aria-labelledby': 'basic-button',
                 }}
               >
-                {MENU_SECTIONS.map(section => {
+                {MENU_SECTIONS.map((section, i) => {
                   return (
-                    <MenuItem onClick={handleClose}>
+                    <MenuItem key={i} onClick={handleClose}>
                       <Link href={`/${section.title.toLowerCase()}`} underline="none" sx={{ color: colors.grey[100] }}>
                         <Typography variant="h6">
                           {section.title}
@@ -95,13 +95,13 @@ function Header() {
             
             : (
             <Box display="flex">
-              {MENU_SECTIONS.map(section => {
+              {MENU_SECTIONS.map((section, i) => {
                 return (
-                  <Link href={`/${section.title.toLowerCase()}`} underline="none" sx={{ padding: "15px", color: colors.grey[100] }}>
-                  <Typography variant="h4" sx={{ flexGrow: 1 }}>
-                    {section.title}
-                  </Typography>
-                </Link>
+                  <Link key={i} href={`/${section.title.toLowerCase()}`} underline="none" sx={{ padding: "15px", color: colors.grey[100] }}>
+                    <Typography variant="h4" sx={{ flexGrow: 1 }}>
+                      {section.title}
+                    </Typography>
+                  </Link>
                 )
               })}
             </Box>

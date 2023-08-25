@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
 import { createBrowserRouter, RouterProvider, Routes, Route } from 'react-router-dom';
-import { Box } from '@mui/material';
 
 import { ColorModeContext, useMode } from './theme';
 import { CssBaseline, ThemeProvider } from '@mui/material';
+import { ChakraProvider } from '@chakra-ui/react'
 
 
 // import pages
@@ -18,14 +18,6 @@ import Error404Page from './pages/Error404Page';
 import Header from './components/layout/General/Header/Header';
 import Footer from './components/layout/General/Footer/Footer';
 
-
-const styles = {
-  container: {
-    width: { xs: "90%", sm: "80%" },
-    maxWidth: "1300px",
-    margin: "2.5rem auto",
-  },
-};
 
 
 // 3️⃣ Router singleton created
@@ -46,28 +38,30 @@ function Root() {
   const [theme, colorMode] = useMode();
 
   return (
+    <ChakraProvider>
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <main>
-            <Fragment>
-              <Header />
-              <Box sx={styles.container}>
-                <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/roadmap" element={<RoadmapPage />} />
-                  <Route path="/blog" element={<BlogPage />} />
-                  <Route path="/tools" element={<ToolsPage />} />
-                  <Route path="/data" element={<DashboardPage />} />
-                  <Route path="/community" element={<CommunityPage />} />
-                  <Route path="*" element={<Error404Page />} />
-                </Routes>   
-              </Box>
-              <Footer />       
-            </Fragment>
-          </main>
+            <main>
+              <Fragment>
+                <Header />
+                {/* <Box sx={styles.container}> */}
+                  <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/roadmap" element={<RoadmapPage />} />
+                    <Route path="/blog" element={<BlogPage />} />
+                    <Route path="/tools" element={<ToolsPage />} />
+                    <Route path="/data" element={<DashboardPage />} />
+                    <Route path="/community" element={<CommunityPage />} />
+                    <Route path="*" element={<Error404Page />} />
+                  </Routes>   
+                {/* </Box> */} 
+                <Footer />       
+              </Fragment>
+            </main>
         </ThemeProvider>
       </ColorModeContext.Provider>
+    </ChakraProvider>
   );
 }
 
