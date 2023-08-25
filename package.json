@@ -24,6 +24,7 @@
     "react-fast-marquee": "^1.6.0",
     "react-icons": "^4.10.1",
     "react-router-dom": "^6.11.2",
+    "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.1",
     "react-wrap-balancer": "^1.1.0",
     "reactflow": "^11.8.2",

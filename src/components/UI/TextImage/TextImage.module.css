@@ -1,0 +1,6 @@
+/* RESPONSIVE */
+@media screen and (max-width: 1200px) {
+  .textContainer {
+    order: -10;
+  }
+}

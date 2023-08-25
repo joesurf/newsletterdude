@@ -6,6 +6,9 @@ import Headline from "../components/layout/HomePage/Headline/Headline";
 // import OurMembers from "../components/layout/HomePage/Members/OurMembers";
 import Pillars from "../components/layout/HomePage/Pillars/Pillars";
 import ArticleMarquee from "../components/layout/HomePage/ArticleMarquee/ArticleMarquee";
+import ThreeTierPricing from "../components/layout/HomePage/Pricing/ThreeTierPricing";
+import Features from "../components/layout/HomePage/Features/Features";
+
 import CTA from "../components/layout/HomePage/CTA/cta";
 import FAQ from "../components/layout/HomePage/FAQ/FAQ";
 
@@ -32,7 +35,8 @@ const HomePage = () => {
       <Box sx={styles.container}>
         <Headline />
         <Pillars />
-        {/* <Examples of Features /> */}
+        <Features />
+        <ThreeTierPricing />
       </Box>
       <CTA />
       <FAQ />

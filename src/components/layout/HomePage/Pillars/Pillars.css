@@ -1,7 +1,7 @@
 .container__grid {
     display: grid;
     gap: 1.5rem; 
-    align-items: flex-start; 
+    align-items: center; 
     max-width: 24rem; 
     margin-bottom: 1.5rem;
 }

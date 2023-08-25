@@ -5,7 +5,7 @@ import { Grid } from "@mui/material";
 const ImageGrid = (props) => {
   return (
     <Grid item lg={props.gridSize} className={css.imgContainer}>
-      <img src={props.src} alt={props.alt} style={props.maxWidth} />
+      <img src={props.src} alt={props.alt} style={{ maxWidth: props.maxWidth }} />
     </Grid>
   );
 };
