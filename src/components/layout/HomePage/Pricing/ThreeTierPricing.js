@@ -103,7 +103,7 @@ export default function ThreeTierPricing() {
               <Switch
                 checked={checked}
                 onChange={handleChange}
-                inputProps={{ 'aria-label': 'controlled' }}
+                color="default"
               />
             <Typography><i>monthly</i></Typography>
           </Box>
@@ -168,13 +168,13 @@ export default function ThreeTierPricing() {
                   {subscription.benefits.map((benefit, i) => {
                     return (
                       <ListItem key={i}>
-                        <ListIcon as={BsFillCheckCircleFill}  />
-                          {" "}{benefit}
+                        <ListIcon as={BsFillCheckCircleFill} sx={{ color: colors.grey[500] }} />
+                          <span style={{ color: "black" }}>{" "}{benefit}</span>
                       </ListItem>
                     )
                   })}
                   <ListItem>
-                    <span style={{ fontSize: "10px" }}>*Discounted price because benefits still in the works</span>
+                    <span style={{ fontSize: "10px", color: "black" }}>*Discounted price because benefits still in the works</span>
                   </ListItem>
                 </List>
                 <Box w="80%" pt={7}>

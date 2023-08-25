@@ -31,6 +31,7 @@ const PILLARS = [
 
 
 const Pillars = () => {
+
   return (
     <Box
       sx={{
@@ -65,10 +66,10 @@ const Pillars = () => {
         {PILLARS.map((pillar, i) => {
           return (
             <Box key={i} sx={{"display":"flex","position":"relative","padding":"2rem","flexDirection":"column","borderRadius":"0.25rem","height":"100%","textAlign":"left","backgroundColor":"#ffffff","boxShadow":"0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"}}>
-              <Typography sx={{"marginBottom":"0.25rem","fontSize":"1.5rem","lineHeight":"2rem","fontWeight":700}} >
+              <Typography color="black" sx={{"marginBottom":"0.25rem","fontSize":"1.5rem","lineHeight":"2rem","fontWeight":700}} >
                 {pillar.title}
               </Typography>
-              <Typography sx={{"fontSize":"1.125rem","lineHeight":["1.75rem",1.375]}}>
+              <Typography color="black" sx={{"fontSize":"1.125rem","lineHeight":["1.75rem",1.375]}}>
                 {pillar.description}
               </Typography>
             </Box>
