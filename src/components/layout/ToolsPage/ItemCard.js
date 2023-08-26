@@ -61,6 +61,7 @@ export const ItemCard = (props) => {
       <ConfirmDialog
             open={infoOpen}
             onClose={handleClose}
+            link={props.article_link}
         >
             <Box>
               <Typography variant="h2" sx={{ fontWeight: "bold" }}>

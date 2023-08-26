@@ -26,7 +26,7 @@ function RoadmapFlowchart() {
         { id: 'a3', type: 'timeline', position: { x: 1600, y: 30 }, data: { title: "Milestone 3", columns: 4 } },
 
         // Milestone 1
-        { id: '1', type: 'roadmap', position: { x: 100, y: 250 }, data: { id: 'Step 1', icon: <PsychologyIcon />, description: "Define your goals", article_link: "https://blog.newsletterdude.com/define-your-goals/" } },
+        { id: '1', type: 'roadmap', position: { x: 100, y: 250 }, data: { id: 'Step 1', icon: <PsychologyIcon />, description: "Define your goals", article_link: "https://blog.newsletterdude.com/define-your-goals/", tools: ["ghost", "notion"], framework: ["What is the current pricing and your goal?", "What are your expertise and passion, or something you are good at?", "What is the end goal, how much time do you have and is the commitment?"] } },
         { id: '2', type: 'roadmap', position: { x: 350, y: 100 }, data: { id: 'Step 2', icon: <PsychologyIcon />, description: "Find your expertise", article_link: "https://blog.newsletterdude.com/find-your-expertise/" } },
         { id: '4', type: 'roadmap', position: { x: 350, y: 250 }, data: { id: 'Step 4', icon: <PsychologyIcon />, description: "Determine your content", article_link: "https://blog.newsletterdude.com/craft-your-content-strategy-for-building-a-newsletter/" } },
         { id: '3', type: 'roadmap', position: { x: 350, y: 400 }, data: { id: 'Step 3', icon: <PeopleIcon />, description: "Identify your audience", article_link: "https://blog.newsletterdude.com/identify-your-audience/" } },

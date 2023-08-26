@@ -58,7 +58,7 @@ function SearchSection() {
     }, [])
 
     useEffect(() => {
-        setInput(queryParameters.get("tool"))
+        if (queryParameters.get("tool")) setInput(queryParameters.get("tool"))
     }, [queryParameters])
 
     function capitalizeFirstLetter(string) {

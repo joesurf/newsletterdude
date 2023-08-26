@@ -65,28 +65,31 @@ export function RoadmapNode({ data }) {
           <Typography variant="h5" fontWeight="bold" mt="10px">
             Framework
           </Typography>
-          <ol style={{ marginLeft: "15px" }}>
-            {["What is the current pricing and your goal?", "What are your expertise and passion, or something you are good at?", "What is the end goal, how much time do you have and is the commitment?"]
-            .map((item, i) => {
-              return <li key={i}>
-                <Typography variant="h6">
-                  {item}
-                </Typography>
-                </li>
-            })}
-          </ol>
+          {data.framework ? 
+            <ol style={{ marginLeft: "15px" }}>
+              {data.framework.map((item, i) => {
+                return <li key={i}>
+                  <Typography variant="h6">
+                    {item}
+                  </Typography>
+                  </li>    
+              })}
+            </ol>
+            : <Typography variant="h6"><i>Writing in progress...</i></Typography>
+          }
           <Typography variant="h5" mt="10px" fontWeight="bold">
             Relevant tools
           </Typography>
             <Grid container sx={{ mt: "5px", textAlign: "center" }}>
-              {["ghost", "notion"].map((tool, i) => {
+              {data.tools ? data.tools.map((tool, i) => {
                 return (<Box key={i} mx="5px">
                   <HashLink to={`http://localhost:3000/tools?tool=${tool}`}
                   >
                     <ImageGrid src={`${process.env.REACT_APP_SUPABASE_URL}/storage/v1/object/public/Tool/${tool}_logo.png`} alt="logo" maxWidth="30px" />
                   </HashLink>
                 </Box>)
-              })}
+              })
+              : <Typography variant="h6"><i>None</i></Typography>}
             </Grid>
         </Box>
       </ConfirmDialog>

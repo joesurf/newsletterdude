@@ -48,6 +48,7 @@ export default function FilterItems({searchstring, list, category}) {
                             description={item.description}
                             type={item.type}
                             category={item.category}
+                            article_link={item.article_link}
                         />
                     );
                 })}
