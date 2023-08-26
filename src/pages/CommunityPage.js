@@ -1,6 +1,8 @@
 import React from 'react'
 import { Box } from '@mui/material'
 
+import HeroBanner from '../components/layout/CommunityPage/HeroBanner';
+
 
 const styles = {
   container: {
@@ -14,7 +16,7 @@ const styles = {
 function CommunityPage() {
   return (
     <Box sx={styles.container}>
-        CommunityPage
+      <HeroBanner />
     </Box>
   )
 }

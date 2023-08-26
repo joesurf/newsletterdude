@@ -4,7 +4,7 @@ import { tokens } from '../../../../theme'
 import { HashLink } from 'react-router-hash-link';
 
 
-export default function GhostEmbeddablePricingButton() {
+export default function ScrollToPricing() {
     const theme = useTheme()
     const colors = tokens(theme.palette.mode)
 
@@ -12,7 +12,7 @@ export default function GhostEmbeddablePricingButton() {
         <Box>
             <HashLink smooth to="#pricing">
                 <Button sx={{ backgroundColor: colors.grey[100], color: colors.grey[900] }}>
-                    Join the newsletter community
+                    Subscribe to the newsletter
                 </Button>
             </HashLink>
         </Box>

@@ -1,4 +1,4 @@
-import GhostEmbeddablePricingButton from "../Pricing/Pricing";
+import ScrollToPricing from "../Pricing/ScrollToPricing";
 import { Typography, useTheme } from "@mui/material";
 import { tokens } from "../../../../theme";
 
@@ -20,7 +20,7 @@ export default function Cta() {
             <Typography variant="h3" marginBottom="20px">
               Let's find out.
             </Typography>
-            <GhostEmbeddablePricingButton />
+            <ScrollToPricing />
           </div>
         </div>
       </div>

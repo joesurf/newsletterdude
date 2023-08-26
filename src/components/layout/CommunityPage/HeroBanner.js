@@ -1,8 +1,8 @@
 import "./HeroBanner.css";
 
 import { Typography, Box } from "@mui/material";
-import ScrollToPricing from "../Pricing/ScrollToPricing";
-import RatingAvatar from "../../../UI/RatingAvatar/RatingAvatar";
+import RatingAvatar from "../../UI/RatingAvatar/RatingAvatar";
+import CommunityJoinButton from "./CommunityJoinButton";
 
 
 const TESTIMONIALS = [
@@ -37,17 +37,17 @@ const HeroBanner = (props) => {
           mx: "auto",
         }}
       >
-          Everyone should and can build a newsletter.
+          Join the private network for newsletter builders across the world.
       </Typography>
 
       <Typography
         variant="h4"
         sx={{ my: "2rem", maxWidth: "1000px", mx: "auto" }}
       >
-          Learn how to build newsletters to share your personal adventures. Or build a sustainable 
-          business through sharing your expertise and passion.
+          Our community is an online mastermind community for newsletter builders looking 
+          to participate in deep dive discussions on building their newsletters.
       </Typography>
-      <ScrollToPricing />
+      <CommunityJoinButton />
       <RatingAvatar testimonials={TESTIMONIALS} />
 
     </Box>

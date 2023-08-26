@@ -37,6 +37,7 @@ const HomePage = () => {
         <Pillars />
         <Features />
         <ThreeTierPricing />
+        {/* <Testimonials /> */}
       </Box>
       <CTA />
       <FAQ />
