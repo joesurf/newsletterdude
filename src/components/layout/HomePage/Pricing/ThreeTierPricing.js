@@ -12,10 +12,13 @@ import {
     
 import React from 'react'
 import { Typography, useTheme } from '@mui/material'
+
 import Switch from '@mui/material/Switch';
 import { tokens } from '../../../../theme'
 
 import { BsFillCheckCircleFill } from 'react-icons/bs' 
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import HourglassTopIcon from '@mui/icons-material/HourglassTop';
 
 
 const SUBSCRIPTIONS = [
@@ -34,7 +37,8 @@ const SUBSCRIPTIONS = [
       "≥ 50 tools with exclusive discounts*",
       "Access to private community*", 
       "Access to interviews and case studies*"
-    ]
+    ],
+    available: true,
   },
   {
     title: "Build Together",
@@ -50,7 +54,8 @@ const SUBSCRIPTIONS = [
       "Invitation to monthly masterminds",
       "Access to mentors and experts*",
       "Access to trends and analytics*",
-    ]
+    ],
+    available: false
   },
 ]
 
@@ -78,9 +83,11 @@ export default function ThreeTierPricing() {
     const colors = tokens(theme.palette.mode)
 
     const [checked, setChecked] = React.useState(true);
+    const [subscriptionLoading, setSubscriptionLoading] = React.useState(false)
 
-    const startSubscription = (price_link) => {
-        window.location.replace(price_link)
+    const startSubscription = (subscriptionInfo) => {
+      setSubscriptionLoading(true)
+      window.location.replace(checked ? subscriptionInfo.monthly_price_link : subscriptionInfo.yearly_price_link)
     }
 
     const handleChange = (event) => {
@@ -180,20 +187,36 @@ export default function ThreeTierPricing() {
                   </ListItem>
                 </List>
                 <Box w="80%" pt={7}>
-                  <Button w="full" colorScheme="red" 
-                    onClick={() => startSubscription(checked ? subscription.monthly_price_link : subscription.yearly_price_link)} 
-                    sx={{ backgroundColor: colors.grey[700], borderRadius: "5px", py: "4px" }}
-                  >
-                    SUBSCRIBE
-                  </Button>
+                  {subscription.available 
+                    ? <Button w="full" colorScheme="red" isLoading={subscriptionLoading}
+                        onClick={() => startSubscription(subscription)} 
+                        sx={{ backgroundColor: colors.grey[700], borderRadius: "5px", py: "4px" }}
+                      >
+                        SUBSCRIBE
+                        <KeyboardDoubleArrowRightIcon />
+                      </Button>
+                    : <Button w="full" colorScheme="red" 
+                        sx={{ 
+                          backgroundColor: colors.grey[700], 
+                          borderRadius: "5px", py: "4px",
+                          "&:hover": { cursor: "not-allowed" }
+                        }}
+                      >
+                        IN THE WORKS
+                        <HourglassTopIcon />
+                      </Button>
+                  }
+                  
                 </Box>
               </VStack>
             </Box>
           </PriceWrapper>
           )
         })}
-
       </Stack>
+      <Typography variant="h5" textAlign="center">
+          <i>You will be redirected to the blog for signup.</i>
+        </Typography>
     </Box>
   )
 }
