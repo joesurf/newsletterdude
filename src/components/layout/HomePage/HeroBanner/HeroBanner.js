@@ -1,7 +1,20 @@
 import "./HeroBanner.css";
 
-import { Typography, Link, Box } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import GhostEmbeddablePricingButton from "../Pricing/Pricing";
+import RatingAvatar from "../../../UI/RatingAvatar/RatingAvatar";
+
+
+const TESTIMONIALS = [
+  {
+    name: "Joseph Long",
+    rating: 4.5,
+  },
+  {
+    name: "Nicholas Fo",
+    rating: 4.2,
+  },
+]
 
 
 const HeroBanner = (props) => {
@@ -47,7 +60,7 @@ const HeroBanner = (props) => {
           Our community is an online mastermind community for newsletter builders looking 
           to participate in deep dive discussions on building their newsletters.
       </Typography>
-      <Link
+      {/* <Link
         key={1}
         href=""
         onClick={() => {
@@ -57,9 +70,11 @@ const HeroBanner = (props) => {
         sx={{
           textDecoration: "none",
         }}
-      >
+      > */}
         <GhostEmbeddablePricingButton />
-      </Link>
+      {/* </Link> */}
+      <RatingAvatar testimonials={TESTIMONIALS} />
+
     </Box>
   );
 };

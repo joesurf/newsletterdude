@@ -16,8 +16,8 @@ const FEATURES = [
         imageThenText: true
     },
     {
-        header: "Newsletter Building Roadmap",
-        paragraph: "Exclusive discounts with the most relevant software companies, tools, and apps. We also have a robust preferred vendor database.",
+        header: "Software Tools Index",
+        paragraph: "A convenient place to find all the tools you will ever need for your newsletter, from email marketing to internal management. Exclusive discounts on the way.",
         src: NewsletterDudeTools,
         alt: "feature screenshot",
         maxWidth: "400px",

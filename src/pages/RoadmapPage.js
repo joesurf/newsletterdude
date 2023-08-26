@@ -18,8 +18,9 @@ function RoadmapPage() {
   return (
     <Fragment>
       <Box sx={styles.container}>
-      <MapHeader />
-      <RoadmapFlowchart />
+        <MapHeader />
+        <RoadmapFlowchart />
+        {/* TODO: <CaseStudies /> */}
       </Box>
     </Fragment>
   )
