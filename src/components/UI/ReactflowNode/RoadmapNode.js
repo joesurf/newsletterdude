@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Handle, Position } from 'reactflow';
-import { Box, Button, Typography, useTheme } from '@mui/material';
+import { Box, Button, Grid, Typography, useTheme } from '@mui/material';
 import './RoadmapNode.css'
 import ConfirmDialog from '../ConfirmDialog/ConfirmDialog';
 
 import { tokens } from '../../../theme';
 
+import { HashLink } from 'react-router-hash-link';
+import ImageGrid from '../ImageGrid/ImageGrid';
 
 
 export function RoadmapNode({ data }) {
@@ -29,10 +31,6 @@ export function RoadmapNode({ data }) {
     setInfoOpen(false);
   }  
 
-  const openLink = () => {
-    if (data.article_link) window.open(data.article_link, "_blank", "noreferrer")
-  }
-
   return (
     <Box onClick={handleSubmit} sx={{ 
       width: 200, 
@@ -55,26 +53,41 @@ export function RoadmapNode({ data }) {
       <ConfirmDialog
             open={infoOpen}
             onClose={handleClose}
+            link={data.article_link}
       >
         <Box>
           <Typography variant="h2" sx={{ fontWeight: "bold" }}>
             {data.description}
           </Typography>
           <Typography variant="h6">
-            {data.id}
+            <i>{data.id}</i>
           </Typography>
-          <Typography variant="h5">
-            {data.framework ? data.framework : "Framework"}
-          </Typography>          
-          <Typography onClick={openLink} variant="h6" sx={{ 
-            textDecoration: "underline",
-            "&:hover": { cursor: "pointer" }
-          }}>
-            {data.article_link ? "Learn more" : "Writing in progress..."}
+          <Typography variant="h5" fontWeight="bold" mt="10px">
+            Framework
           </Typography>
-          <Typography variant="body2">
-            Relevant tools: Can add affiliates here
+          <ol style={{ marginLeft: "15px" }}>
+            {["What is the current pricing and your goal?", "What are your expertise and passion, or something you are good at?", "What is the end goal, how much time do you have and is the commitment?"]
+            .map((item, i) => {
+              return <li key={i}>
+                <Typography variant="h6">
+                  {item}
+                </Typography>
+                </li>
+            })}
+          </ol>
+          <Typography variant="h5" mt="10px" fontWeight="bold">
+            Relevant tools
           </Typography>
+            <Grid container sx={{ mt: "5px", textAlign: "center" }}>
+              {["ghost", "notion"].map((tool, i) => {
+                return (<Box key={i} mx="5px">
+                  <HashLink to={`http://localhost:3000/tools?tool=${tool}`}
+                  >
+                    <ImageGrid src={`${process.env.REACT_APP_SUPABASE_URL}/storage/v1/object/public/Tool/${tool}_logo.png`} alt="logo" maxWidth="30px" />
+                  </HashLink>
+                </Box>)
+              })}
+            </Grid>
         </Box>
       </ConfirmDialog>
       <Handle type="source" position={Position.Top} id="top" />

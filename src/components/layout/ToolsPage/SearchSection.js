@@ -9,9 +9,11 @@ import MenuItem from '@mui/material/MenuItem';
 import { fetchdata, fetchcategory } from './FetchData';
 
 import FilterItems from './FilterItems';
+import { useSearchParams } from 'react-router-dom';
 
 
 function SearchSection() {
+    const [queryParameters] = useSearchParams()
 
     const [input, setInput] = useState('')
     const [category, setCategory] = useState("");
@@ -54,6 +56,10 @@ function SearchSection() {
         }
         fetchCategories()
     }, [])
+
+    useEffect(() => {
+        setInput(queryParameters.get("tool"))
+    }, [queryParameters])
 
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);

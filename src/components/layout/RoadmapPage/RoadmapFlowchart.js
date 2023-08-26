@@ -16,7 +16,6 @@ import ShareIcon from '@mui/icons-material/Share';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import EqualizerIcon from '@mui/icons-material/Equalizer';
 
-
 function RoadmapFlowchart() {
     // TODO: Options to change layout from table to flow chart + include advance steps
 

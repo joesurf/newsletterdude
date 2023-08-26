@@ -1,19 +1,24 @@
 import React from "react";
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 
 import {
-  Dialog,
+Box,    
+Dialog,
   DialogActions,
   DialogContent,
   Button,
 } from "@mui/material";
 
 const ConfirmDialog = (props) => {
-    const { onClose, open, children } = props;
-
+    const { onClose, open, children, link } = props;
 
     const handleClose = () => {
         onClose()
     };
+
+    const redirectToBlog = () => {
+        if (link) window.open(link, "_blank", "noreferrer")
+    }
 
 
     return (
@@ -26,9 +31,17 @@ const ConfirmDialog = (props) => {
         <DialogContent>
             {children}
         </DialogContent>
+        <Box display="flex" flexDirection="row" justifyContent="flex-end">
         <DialogActions>
-            <Button onClick={handleClose}>Close</Button>
+            <Button disabled={link ? false : true} autoFocus onClick={redirectToBlog}>
+                {link ? "Read the article" : "Writing in progress..."}
+                <KeyboardDoubleArrowRightIcon />
+            </Button>
         </DialogActions>
+        <DialogActions>
+            <Button autoFocus onClick={handleClose}>Close</Button>
+        </DialogActions>
+        </Box>
         </Dialog>
     );
 };
