@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { TextField, Autocomplete, Divider } from '@mui/material'
+import { TextField, Autocomplete, Divider, Box } from '@mui/material'
 import Button from '@mui/material/Button';
 
 import Menu from '@mui/material/Menu';
@@ -10,6 +10,8 @@ import { fetchdata, fetchcategory } from './FetchData';
 
 import FilterItems from './FilterItems';
 import { useSearchParams } from 'react-router-dom';
+
+import CloseIcon from '@mui/icons-material/Close';
 
 
 function SearchSection() {
@@ -83,15 +85,22 @@ function SearchSection() {
                 />
             }
         />
-        <Button
-            id="basic-button"
-            aria-controls={openCategory ? 'basic-menu' : undefined}
-            aria-haspopup="true"
-            aria-expanded={openCategory ? 'true' : undefined}
-            onClick={handleCategoryClick}
-        >
-            {category ? category : "Category"}
-        </Button>
+        <Box display="flex" textAlign="center" alignItems="center">
+            <Button
+                id="basic-button"
+                aria-controls={openCategory ? 'basic-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={openCategory ? 'true' : undefined}
+                onClick={handleCategoryClick}
+            >
+                {category ? category : "Category"}
+            </Button>
+            {category 
+                    ? <CloseIcon onClick={() => { setCategory("") }} sx={{ 
+                        "&:hover": { color: "red", cursor: "pointer" },
+                     }} />
+                    : <></>}
+        </Box>
         <Menu
             id="basic-menu"
             anchorEl={anchorCategory}
