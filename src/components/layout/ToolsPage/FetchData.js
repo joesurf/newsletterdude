@@ -26,15 +26,23 @@ export const fetchdata = async ()=>{
 export const fetchcategory = async () => {
     try {
         let { data, error, status } = await supabase
-            .from("distinct_tool_categories")
-            .select(`category`)
+            .from("Tool")
+            .select(`newsletter_category`)
+
+        let category_array = []
+        for (var i = 0; i < data.length; i++) {
+            category_array = category_array.concat(data[i].newsletter_category)
+        }
+        let unique_values = [
+            ...new Set(category_array),
+        ];
 
         if (error && status !== 406) {
             throw error;
         }
 
         if (data) {
-            return data;
+            return unique_values;
         }
     } catch (error) {
         alert(error.message);

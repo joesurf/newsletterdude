@@ -4,6 +4,9 @@ import { ItemCard } from './ItemCard';
 
 export default function FilterItems({searchstring, list, category}) {
 
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
 
     const [filteredList, setFilteredList] = useState([]);
 
@@ -15,7 +18,7 @@ export default function FilterItems({searchstring, list, category}) {
                         return element;
                     }
                     else {
-                        return element.category.toLowerCase() === category
+                        return element.newsletter_category.includes(capitalizeFirstLetter(category))
                     }
                 })
                 .filter((element) => {

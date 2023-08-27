@@ -103,16 +103,16 @@ function SearchSection() {
         >
             {categories
                 .sort(function (a, b) {
-                    if (a.category < b.category) {
+                    if (a < b) {
                         return -1;
                     }
-                    if (a.category > b.category) {
+                    if (a > b) {
                         return 1;
                     }
                         return 0;
                     })
                 .map((item, i) => {
-                    return <MenuItem key={i} onClick={handleCategoryValue} value={item.category}>{capitalizeFirstLetter(item.category)}</MenuItem>
+                    return <MenuItem key={i} onClick={handleCategoryValue} value={item}>{capitalizeFirstLetter(item)}</MenuItem>
             })}
         </Menu>
         <Divider />

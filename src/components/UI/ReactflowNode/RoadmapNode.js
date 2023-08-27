@@ -6,7 +6,6 @@ import ConfirmDialog from '../ConfirmDialog/ConfirmDialog';
 
 import { tokens } from '../../../theme';
 
-import { HashLink } from 'react-router-hash-link';
 import ImageGrid from '../ImageGrid/ImageGrid';
 
 
@@ -82,11 +81,11 @@ export function RoadmapNode({ data }) {
           </Typography>
             <Grid container sx={{ mt: "5px", textAlign: "center" }}>
               {data.tools ? data.tools.map((tool, i) => {
-                return (<Box key={i} mx="5px">
-                  <HashLink to={`http://localhost:3000/tools?tool=${tool}`}
+                return (<Box key={i} mx="-5px">
+                  <Button onClick={() => {window.open(`https://newsletterdude.com/tools?tool=${tool}`)}}
                   >
                     <ImageGrid src={`${process.env.REACT_APP_SUPABASE_URL}/storage/v1/object/public/Tool/${tool}_logo.png`} alt="logo" maxWidth="30px" />
-                  </HashLink>
+                  </Button>
                 </Box>)
               })
               : <Typography variant="h6"><i>None</i></Typography>}
