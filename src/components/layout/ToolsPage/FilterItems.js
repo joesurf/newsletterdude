@@ -3,11 +3,6 @@ import { Grid, Box } from '@mui/material';
 import { ItemCard } from './ItemCard';
 
 export default function FilterItems({searchstring, list, category}) {
-
-    function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
-
     const [filteredList, setFilteredList] = useState([]);
 
     useEffect(() => {
@@ -18,7 +13,7 @@ export default function FilterItems({searchstring, list, category}) {
                         return element;
                     }
                     else {
-                        return element.newsletter_category.includes(capitalizeFirstLetter(category))
+                        return element.newsletter_category.includes((category))
                     }
                 })
                 .filter((element) => {

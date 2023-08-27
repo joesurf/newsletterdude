@@ -13,6 +13,7 @@ import { useSearchParams } from 'react-router-dom';
 
 import CloseIcon from '@mui/icons-material/Close';
 
+// TODO: Fix two-word category
 
 function SearchSection() {
     const [queryParameters] = useSearchParams()
@@ -41,7 +42,7 @@ function SearchSection() {
 
     const handleCategoryValue = (e) => {
         setAnchorCategory(null);
-        setCategory(e.target.innerText.toLowerCase())
+        setCategory(e.target.innerText)
     };
 
     useEffect(() => {
@@ -62,10 +63,6 @@ function SearchSection() {
     useEffect(() => {
         if (queryParameters.get("tool")) setInput(queryParameters.get("tool"))
     }, [queryParameters])
-
-    function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
 
   return (
     <div>
@@ -121,7 +118,7 @@ function SearchSection() {
                         return 0;
                     })
                 .map((item, i) => {
-                    return <MenuItem key={i} onClick={handleCategoryValue} value={item}>{capitalizeFirstLetter(item)}</MenuItem>
+                    return <MenuItem key={i} onClick={handleCategoryValue} value={item}>{item}</MenuItem>
             })}
         </Menu>
         <Divider />
