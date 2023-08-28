@@ -23,7 +23,7 @@ const FEATURES = [
         maxWidth: "400px",
         imageThenText: false
       },
-  ]
+]
 
 
 function Features() {

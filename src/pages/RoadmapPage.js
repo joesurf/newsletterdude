@@ -3,6 +3,7 @@ import { Box } from '@mui/material'
 
 import MapHeader from '../components/layout/RoadmapPage/MapHeader'
 import RoadmapFlowchart from '../components/layout/RoadmapPage/RoadmapFlowchart'
+import CaseStudies from '../components/layout/RoadmapPage/CaseStudies'
 
 
 const styles = {
@@ -20,7 +21,7 @@ function RoadmapPage() {
       <Box sx={styles.container}>
         <MapHeader />
         <RoadmapFlowchart />
-        {/* TODO: <CaseStudies /> */}
+        <CaseStudies />
       </Box>
     </Fragment>
   )

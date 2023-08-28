@@ -38,6 +38,8 @@ const HomePage = () => {
         <Features />
         <ThreeTierPricing />
         {/* <Testimonials /> */}
+
+      {/* TODO: Who is this for page: individuals, businesses, individuals building a business */}
       </Box>
       <CTA />
       <FAQ />
