@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
 import React, { useState, useEffect } from 'react'
-import { Grid, Box, Typography, Paper, useTheme } from '@mui/material'
+import { Grid, Box, Typography, Paper, useTheme, Divider } from '@mui/material'
 import { tokens } from '../../../theme'
 
 import ConfirmDialog from '../../UI/ConfirmDialog/ConfirmDialog'
@@ -50,12 +50,18 @@ function ListCard({ case_study }) {
     }}>
         <Item>
             <Box display="flex" flexDirection={windowWidth > RESPONSIVE_WIDTH ? "row" : "column"}>
-                <Box width={windowWidth > RESPONSIVE_WIDTH ? "40%" : "100%"} display="flex" alignItems="center" justifyContent={windowWidth > RESPONSIVE_WIDTH ? "" : "center"}>
+                <Box 
+                    width={windowWidth > RESPONSIVE_WIDTH ? "40%" : "100%"} 
+                    display="flex" 
+                    alignItems="center" 
+                    justifyContent={windowWidth > RESPONSIVE_WIDTH ? "" : "center"}
+                >
                     <ImageGrid src={case_study.image} maxWidth="50px" />
                     <Typography variant="h4" sx={{ color: colors.grey[100] }}>
                         {case_study.title}
                     </Typography>
                 </Box>
+                {windowWidth > RESPONSIVE_WIDTH ? <></> : <Divider variant="middle" sx={{ my: "10px" }} />}
                 <Box width={windowWidth > RESPONSIVE_WIDTH ? "60%" : "100%"} display="flex" flexDirection="row" justifyContent="space-around">
                     {case_study.data.map((data, i) => {
                         return (
