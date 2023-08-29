@@ -87,6 +87,7 @@ function PriceWrapper(props) {
       borderColor={useColorModeValue('gray.200', 'gray.500')}
       borderRadius={'xl'}
       mx={{ base: 'auto', md: '0' }}
+      width={{ base: '50%', md: '33%' }}
     >
       {children}
     </Box>
@@ -102,7 +103,8 @@ export default function ThreeTierPricing() {
 
     const startSubscription = (subscriptionInfo) => {
       setSubscriptionLoading(true)
-      window.location.replace(checked ? subscriptionInfo.monthly_price_link : subscriptionInfo.yearly_price_link)
+      window.open(checked ? subscriptionInfo.monthly_price_link : subscriptionInfo.yearly_price_link, '_blank')
+      setSubscriptionLoading(false)
     }
 
     const handleChange = (event) => {
