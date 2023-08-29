@@ -40,7 +40,7 @@ export const ItemCard = (props) => {
       onClick={handleSubmit}
     >
       <section id={props.title}></section>
-      <CardMedia sx={{ display: "flex", mt: "5px" }}>
+      <CardMedia sx={{ display: "flex", mt: "5px", height: "30%" }}>
         <img
           src={`${process.env.REACT_APP_SUPABASE_URL}/storage/v1/object/public/Tool/${props.image_id}`}
           alt="green iguana"
@@ -50,7 +50,7 @@ export const ItemCard = (props) => {
           }}
         />
       </CardMedia>
-      <CardContent>
+      <CardContent sx={{ height: "70%" }}>
         <Typography variant="h4" sx={{ fontWeight: "bold" }}>
           {props.title}
         </Typography>
@@ -70,9 +70,13 @@ export const ItemCard = (props) => {
               <Typography variant="body1">
                 {props.description}
               </Typography>
-              <Button style={{ backgroundColor: "grey", color: "white", padding: 1, paddingLeft: 6, paddingRight: 6, marginTop: 5, marginRight: 10, marginLeft: 0 }}>
-                {props.category}
-              </Button>
+              {props.newsletter_category.map((category, i) => {
+                return (
+                  <Button key={i} style={{ backgroundColor: "grey", color: "white", padding: 1, paddingLeft: 6, paddingRight: 6, marginTop: 5, marginRight: 10, marginLeft: 0 }}>
+                    {category}
+                  </Button>
+                )
+              })}
             </Box>
         </ConfirmDialog>  
     </Grid>

@@ -48,6 +48,7 @@ export default function FilterItems({searchstring, list, category}) {
                             category={item.category}
                             image_id={item.image_id}
                             article_link={item.article_link}
+                            newsletter_category={item.newsletter_category}
                         />
                     );
                 })}
