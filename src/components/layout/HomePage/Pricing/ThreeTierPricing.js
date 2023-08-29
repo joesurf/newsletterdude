@@ -23,6 +23,19 @@ import HourglassTopIcon from '@mui/icons-material/HourglassTop';
 
 const SUBSCRIPTIONS = [
   {
+    title: "Build Later",
+    monthly: 0,
+    monthly_price_link: "https://blog.newsletterdude.com/#/portal/signup/free",
+    yearly: 0,
+    yearly_price_link: "https://blog.newsletterdude.com/#/portal/signup/free",
+    benefits: [
+      "Access to weekly updates",
+      "Access to future discounts",
+    ],
+    available: true,
+    free: true,
+  },
+  {
     title: "Build Yourself",
     monthly: 20,
     monthly_discounted: 10,
@@ -34,11 +47,12 @@ const SUBSCRIPTIONS = [
     benefits: [
       "Access to building roadmap",
       "≥ 30 articles updated regularly",
-      "≥ 50 tools with exclusive discounts*",
+      "≥ 50 tools index*",
       "Access to private community*", 
       "Access to interviews and case studies*"
     ],
     available: true,
+    free: false,
   },
   {
     title: "Build Together",
@@ -55,7 +69,8 @@ const SUBSCRIPTIONS = [
       "Access to mentors and experts*",
       "Access to trends and analytics*",
     ],
-    available: false
+    available: false,
+    free: false,
   },
 ]
 
@@ -166,7 +181,7 @@ export default function ThreeTierPricing() {
                       </Typography>
                   </HStack>
                   <Typography variant="h6">
-                      billed {checked ? "monthly" : "yearly"}
+                      {subscription.free ? "FREE FOREVER" : <>billed {checked ? "monthly" : "yearly"}</>}
                   </Typography>
               </Box>
               <VStack
@@ -182,9 +197,11 @@ export default function ThreeTierPricing() {
                       </ListItem>
                     )
                   })}
-                  <ListItem>
-                    <span style={{ fontSize: "10px", color: "black" }}>*Discounted price because benefits still in the works</span>
-                  </ListItem>
+                  {subscription.discounted ? 
+                    <ListItem>
+                      <span style={{ fontSize: "10px", color: "black" }}>*Discounted price because benefits still in the works</span>
+                    </ListItem>
+                  : <></>}
                 </List>
                 <Box w="80%" pt={7}>
                   {subscription.available 
@@ -215,7 +232,11 @@ export default function ThreeTierPricing() {
         })}
       </Stack>
       <Typography variant="h5" textAlign="center">
-          <i>You will be redirected to the blog for signup.</i>
+          <i>
+            Please note that your subscription gives you access to both the website + blog.
+            You will be redirected to the blog for signup. The website is only free to public for a limited
+            period, and will still be available to you once that period ends.
+          </i>
         </Typography>
     </Box>
   )

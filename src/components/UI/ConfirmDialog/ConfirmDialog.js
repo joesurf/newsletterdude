@@ -20,7 +20,6 @@ const ConfirmDialog = (props) => {
         if (link) window.open(link, "_blank", "noreferrer")
     }
 
-
     return (
         <Dialog
             open={open}
