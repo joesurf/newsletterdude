@@ -87,7 +87,7 @@ function PriceWrapper(props) {
       borderColor={useColorModeValue('gray.200', 'gray.500')}
       borderRadius={'xl'}
       mx={{ base: 'auto', md: '0' }}
-      width={{ base: '50%', md: '33%' }}
+      width={{ base: '70%', md: '33%' }}
     >
       {children}
     </Box>
