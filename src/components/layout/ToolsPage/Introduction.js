@@ -39,7 +39,7 @@ function Introduction() {
     <div>
         <Typography variant="h1" fontWeight="bold">
           <span style={{ color: "grey" }}>Explore: </span>
-          <span id="intro__type"></span>
+          <span id="intro__type" className="gradient__word"></span>
         </Typography>
         <Divider />
         <Typography variant="h4" marginTop="10px" marginBottom="10px">

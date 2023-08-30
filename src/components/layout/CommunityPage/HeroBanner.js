@@ -36,6 +36,7 @@ const HeroBanner = (props) => {
           maxWidth: "1400px",
           mx: "auto",
         }}
+        className="gradient__word"
       >
           Join the private network for newsletter builders across the world.
       </Typography>
