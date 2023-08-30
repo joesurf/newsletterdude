@@ -32,7 +32,7 @@ const VideoGrid = (props) => {
       }}>
         {props.video_id 
         ?
-          <video autoPlay loop muted style={{
+          <video autoPlay loop muted playsInline style={{
             borderRadius: "10px",
             margin: "auto",
             width: "90%",

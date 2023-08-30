@@ -57,8 +57,6 @@ const MyResponsiveScatterPlot = ({ data }) => {
         //     }
         // ]}
         tooltip={node => {
-            console.log('tooltip')
-            console.log(node)
             return (
                 <Box textAlign="center">
                     <Typography variant="h5" fontWeight="bold">{node.node.data.title}</Typography>
@@ -67,8 +65,6 @@ const MyResponsiveScatterPlot = ({ data }) => {
             )
         }}
         onClick={(node) => {
-            console.log("click")
-            console.log(node)
             window.open(node.data.link, '_blank', 'noreferrer')
         }}
     />
