@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Box, useTheme } from "@mui/material";
+import { Box } from "@mui/material";
 
 import HeroBanner from "../components/layout/HomePage/HeroBanner/HeroBanner";
 // import Headline from "../components/layout/HomePage/Headline/Headline";
@@ -14,7 +14,6 @@ import NewsletterGraph from "../components/layout/HomePage/NewsletterGraph";
 
 // import CTA from "../components/layout/HomePage/CTA/cta";
 import FAQ from "../components/layout/HomePage/FAQ/FAQ";
-import { tokens } from "../theme";
 
 
 const styles = {
@@ -27,23 +26,15 @@ const styles = {
 
 
 const HomePage = () => {
-  // TODO: tell them what they can get, not what they can do
-  // TODO: too much text, quickly show your cards
-
-  // Change post headings to more clearer goal based
-  // Change header fonts to sth else
-  const theme = useTheme()
-  const colors = tokens(theme.palette.mode)
-
   return (
     <Fragment>
       <Box sx={{
-        backgroundImage: `linear-gradient(to bottom right, ${colors.redAccent[800]}, ${colors.blueAccent[800]})`,
-        paddingTop: "20px",
+        width: { xs: "90%", sm: "80%" },
+        margin: "2.5rem auto",
       }}>
         <HeroBanner />
-        <ArticleMarquee />
       </Box>
+      <ArticleMarquee />
 
       {/* <OurMembers /> */}
       <Box sx={styles.container}>

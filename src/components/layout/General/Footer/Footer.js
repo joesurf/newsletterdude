@@ -21,7 +21,7 @@ const Footer = () => {
               alt=""
               style={{ maxWidth: "7%", height: "auto" }}
             />
-            <Typography variant="h7" component="h4" sx={{ mt: "10px" }}>
+            <Typography variant="h7" component="h4" sx={{ mt: "10px", fontWeight: "bold" }}>
               My Mission.
             </Typography>
             <Typography variant="body1">
@@ -30,7 +30,7 @@ const Footer = () => {
           </Box>
         </Grid>
         <Grid item xs={12} lg={4}>
-            <Typography variant="h7" component="h4" sx={{ mt: "10px" }}>
+            <Typography variant="h7" component="h4" sx={{ mt: "10px", fontWeight: "bold" }}>
               Contact Me.
             </Typography>
             <Typography variant="body1">

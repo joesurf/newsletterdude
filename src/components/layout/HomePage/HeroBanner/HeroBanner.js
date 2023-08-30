@@ -44,7 +44,7 @@ const HeroBanner = (props) => {
 
       <Typography
         variant="h4"
-        sx={{ my: "2rem", maxWidth: "1000px", mx: "auto" }}
+        sx={{ my: "2rem", maxWidth: "1000px", mx: "auto", width: "90%" }}
       >
           In-depth guides for you every step of the way. Updated with the latest research and methods, 
           based on analysis of successful newsletters. Find the tools you need all in one place.
