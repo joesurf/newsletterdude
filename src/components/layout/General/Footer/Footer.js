@@ -1,6 +1,6 @@
 // import InstagramIcon from "@mui/icons-material/Instagram";
 // import TwitterIcon from '@mui/icons-material/Twitter';
-import Logo from "../../../../assets/NewsletterDudeLogo.png";
+import Logo from "../../../../assets/logos/ND_Round_LightPNG.png";
 import { Typography, Grid, Box, Paper } from "@mui/material";
 
 
@@ -19,7 +19,7 @@ const Footer = () => {
             <img
               src={Logo}
               alt=""
-              style={{ maxWidth: "20%", height: "auto" }}
+              style={{ maxWidth: "7%", height: "auto" }}
             />
             <Typography variant="h7" component="h4" sx={{ mt: "10px" }}>
               My Mission.

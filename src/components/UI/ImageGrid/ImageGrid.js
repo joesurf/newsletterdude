@@ -1,6 +1,6 @@
 import css from "./ImageGrid.module.css";
-
 import { Grid } from "@mui/material";
+
 
 const ImageGrid = (props) => {
   return (

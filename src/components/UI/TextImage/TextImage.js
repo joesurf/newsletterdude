@@ -1,67 +1,54 @@
-import css from "./TextImage.module.css";
-
-import ImageGrid from "../../UI/ImageGrid/ImageGrid";
-
-import { Typography, Grid } from "@mui/material";
+import { Typography, Box, Grid, List, ListItem, ListItemText, useTheme } from "@mui/material";
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { tokens } from "../../../theme";
+import VideoGrid from "../ImageGrid/VideoGrid";
 
 
 const TextImage = (props) => {
-
   // TODO: Adjust responsive alignment of text relative to image
+  const theme = useTheme()
+  const colors = tokens(theme.palette.mode)
 
-  if (props.imageThenText) {
-    return (
+    return (      
       <Grid
         container
         spacing={6}
         sx={{ my: "3rem" }}
-        direction="row"
+        direction={props.isReverse ? "row" : "row-reverse"}
         justifyContent="center"
         alignItems="center"
+        textAlign={{ xs: "center", lg: "left" }}
       >
-        <ImageGrid
+        <VideoGrid
           gridSize={6}
-          src={props.src}
-          alt={props.alt}
-          maxWidth={props.maxWidth}
+          video_id={props.video_id}
         />
-        <Grid item lg={6} className={css.textContainer}>
-          <Typography variant="h2" sx={{ fontWeight: "bold" }}>
-            {props.header}
-          </Typography>
-          <Typography variant="h4" sx={{ mt: "1.2rem" }}>
-            {props.paragraph}
-          </Typography>
-        </Grid>
-      </Grid>
-    );
-  } else {
-    return (
-      <Grid
-        container
-        spacing={6}
-        sx={{ my: "3rem" }}
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-      >
         <Grid item lg={6}>
-          <Typography variant="h2" sx={{ fontWeight: "bold" }}>
+          <Typography variant="h3" sx={{ fontWeight: "bold" }}>
             {props.header}
           </Typography>
-          <Typography variant="h4" sx={{ mt: "1.2rem" }}>
+          <Typography variant="h5" sx={{ mt: "1rem", mb: "1rem" }}>
             {props.paragraph}
           </Typography>
+          <Box width="90%" margin="auto">
+            <List>
+              {props.benefits.map((benefit, i) => {
+                return (
+                  <ListItem key={i}>
+                    <CheckCircleIcon sx={{ color: colors.blueAccent[800] }} />
+                    <ListItemText sx={{ paddingLeft: "5px" }}>
+                      <Typography variant="h4">
+                        {benefit}
+                      </Typography>
+                    </ListItemText>
+                  </ListItem>
+                )
+              })}
+            </List>
+          </Box>
         </Grid>
-        <ImageGrid
-          gridSize={6}
-          src={props.src}
-          alt={props.alt}
-          maxWidth={props.maxWidth}
-        />
       </Grid>
     );
-  }
 };
 
 export default TextImage;

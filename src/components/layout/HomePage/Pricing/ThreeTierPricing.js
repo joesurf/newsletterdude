@@ -209,7 +209,10 @@ export default function ThreeTierPricing() {
                   {subscription.available 
                     ? <Button w="full" colorScheme="red" isLoading={subscriptionLoading}
                         onClick={() => startSubscription(subscription)} 
-                        sx={{ backgroundColor: colors.grey[700], borderRadius: "5px", py: "4px" }}
+                        sx={{ 
+                          backgroundColor: colors.blueAccent[800], 
+                          borderRadius: "5px", py: "4px" }}
+                        className="btn btn-1"
                       >
                         SUBSCRIBE
                         <KeyboardDoubleArrowRightIcon />

@@ -2,19 +2,19 @@ import "./HeroBanner.css";
 
 import { Typography, Box } from "@mui/material";
 import ScrollToPricing from "../Pricing/ScrollToPricing";
-import RatingAvatar from "../../../UI/RatingAvatar/RatingAvatar";
+// import RatingAvatar from "../../../UI/RatingAvatar/RatingAvatar";
 
 
-const TESTIMONIALS = [
-  {
-    name: "Joseph Long",
-    rating: 4.5,
-  },
-  {
-    name: "Nicholas Fo",
-    rating: 4.2,
-  },
-]
+// const TESTIMONIALS = [
+//   {
+//     name: "Joseph Long",
+//     rating: 4.5,
+//   },
+//   {
+//     name: "Nicholas Fo",
+//     rating: 4.2,
+//   },
+// ]
 
 
 const HeroBanner = (props) => {
@@ -22,11 +22,11 @@ const HeroBanner = (props) => {
   return (
     <Box
       sx={{
-        mt: { xs: "4rem", md: "4rem" },
+        mt: { xs: "3rem" },
         mb: "20px",
         mx: "auto",
         textAlign: "center",
-        width: { xs: "90%", sm: "80%" },
+        width: { xs: "90%", lg: "80%" },
       }}
     >
       <Typography
@@ -36,19 +36,20 @@ const HeroBanner = (props) => {
           maxWidth: "1400px",
           mx: "auto",
         }}
+        className="gradient__word"
       >
-          Everyone should and can build a newsletter.
+          Learn how to build a newsletter that makes you money. 
       </Typography>
 
       <Typography
         variant="h4"
         sx={{ my: "2rem", maxWidth: "1000px", mx: "auto" }}
       >
-          Learn how to build newsletters to share your personal adventures. Or build a sustainable 
-          business through sharing your expertise and passion.
+          In-depth guides for you every step of the way. Updated with the latest research and methods, 
+          based on analysis of successful newsletters. Find the tools you need all in one place.
       </Typography>
       <ScrollToPricing />
-      <RatingAvatar testimonials={TESTIMONIALS} />
+      {/* <RatingAvatar testimonials={TESTIMONIALS} /> */}
 
     </Box>
   );

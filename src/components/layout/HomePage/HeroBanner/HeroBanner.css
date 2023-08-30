@@ -14,3 +14,9 @@
     opacity: 0;
   }
 }
+
+.gradient__word {
+  background: -webkit-linear-gradient(#58201e, #2a2d64);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

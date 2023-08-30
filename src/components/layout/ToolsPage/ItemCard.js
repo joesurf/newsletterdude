@@ -40,13 +40,14 @@ export const ItemCard = (props) => {
       onClick={handleSubmit}
     >
       <section id={props.title}></section>
-      <CardMedia sx={{ display: "flex", mt: "5px", height: "30%" }}>
+      <CardMedia sx={{ display: "flex", height: "30%" }}>
         <img
           src={`${process.env.REACT_APP_SUPABASE_URL}/storage/v1/object/public/Tool/${props.image_id}`}
           alt="green iguana"
           style={{
-              width: "25%",
-              margin: "auto",
+              width: "100%",
+              objectFit: "contain",
+              objectPosition: "center"
           }}
         />
       </CardMedia>

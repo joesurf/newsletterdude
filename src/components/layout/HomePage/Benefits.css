@@ -1,0 +1,22 @@
+.curve__underline {
+    position: relative;
+    margin-right: 1rem;
+}
+
+.curve__underline:after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    height: 7px;
+    width: 100%;
+    border: solid 2px #58201e;
+    border-color: #58201e transparent transparent transparent;
+    border-radius: 30%;
+}
+
+.gradient__word {
+    background: -webkit-linear-gradient(#58201e, #2a2d64);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
