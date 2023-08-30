@@ -1,16 +1,13 @@
-// install (please try to align the version of installed @nivo packages)
-// yarn add @nivo/scatterplot
+import { Box, Typography } from '@mui/material'
 import { ResponsiveScatterPlot } from '@nivo/scatterplot'
 
 // make sure parent container have a defined height when using
 // responsive component, otherwise height will be 0 and
 // no chart will be rendered.
-// website examples showcase many properties,
-// you'll often use just a few of them.
-const MyResponsiveScatterPlot = ({ data /* see data tab */ }) => (
-    <ResponsiveScatterPlot
+const MyResponsiveScatterPlot = ({ data }) => {
+    return (<ResponsiveScatterPlot
         data={data}
-        margin={{ top: 60, right: 140, bottom: 70, left: 90 }}
+        margin={{ top: 60, right: 60, bottom: 70, left: 90 }}
         xScale={{ type: 'linear', min: 0, max: 'auto' }}
         xFormat=">-.2f"
         yScale={{ type: 'linear', min: 0, max: 'auto' }}
@@ -36,38 +33,37 @@ const MyResponsiveScatterPlot = ({ data /* see data tab */ }) => (
             legendPosition: 'middle',
             legendOffset: -60
         }}
-        legends={[
-            {
-                anchor: 'bottom-right',
-                direction: 'column',
-                justify: false,
-                translateX: 130,
-                translateY: 0,
-                itemWidth: 100,
-                itemHeight: 12,
-                itemsSpacing: 5,
-                itemDirection: 'left-to-right',
-                symbolSize: 12,
-                symbolShape: 'circle',
-                effects: [
-                    {
-                        on: 'hover',
-                        style: {
-                            itemOpacity: 1
-                        }
-                    }
-                ]
-            }
-        ]}
+        // legends={[
+        //     {
+        //         anchor: windowWidth < 1000 ? "top-left" : "top-right",
+        //         direction: windowWidth < 0 ? "row" : "column",
+        //         justify: false,
+        //         translateX: windowWidth < 1000 ? -20 : 130,
+        //         translateY: windowWidth < 1000 ? -40 : 0,
+        //         itemWidth: 100,
+        //         itemHeight: 12,
+        //         itemsSpacing: 5,
+        //         itemDirection: 'left-to-right',
+        //         symbolSize: 12,
+        //         symbolShape: 'circle',
+        //         effects: [
+        //             {
+        //                 on: 'hover',
+        //                 style: {
+        //                     itemOpacity: 1
+        //                 }
+        //             }
+        //         ]
+        //     }
+        // ]}
         tooltip={node => {
             console.log('tooltip')
             console.log(node)
             return (
-                <div>
-                    {/* <Link href={node.node.data.link}> */}
-                    {node.node.data.title}
-                    {/* </Link> */}
-                </div>
+                <Box textAlign="center">
+                    <Typography variant="h5" fontWeight="bold">{node.node.data.title}</Typography>
+                    <Typography variant="h6">{node.node.serieId}</Typography>
+                </Box>
             )
         }}
         onClick={(node) => {
@@ -76,6 +72,7 @@ const MyResponsiveScatterPlot = ({ data /* see data tab */ }) => (
             window.open(node.data.link, '_blank', 'noreferrer')
         }}
     />
-)
+    )
+}
 
 export default MyResponsiveScatterPlot

@@ -1,6 +1,6 @@
 export const mockgraphdata = [
     {
-      "id": "Aggregators",
+      "id": "Aggregator",
       "data": [
         {
             "title": "The Hustle",
@@ -17,7 +17,7 @@ export const mockgraphdata = [
       ]
     },
     {
-      "id": "Platforms",
+      "id": "Platform",
       "data": [
         {
             "title": "StarterStory",
@@ -28,7 +28,7 @@ export const mockgraphdata = [
       ]
     },
     {
-      "id": "Niches",
+      "id": "Niche",
       "data": [
         {
             "title": "Making Sense of Cents",
@@ -45,7 +45,7 @@ export const mockgraphdata = [
       ]
     },
     {
-        "id": "Newspapers",
+        "id": "Newspaper",
         "data": [
             {
                 "title": "Wall Street Journal",

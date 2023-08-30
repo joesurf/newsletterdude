@@ -58,7 +58,7 @@ function Benefits() {
         <Typography variant="h2" textAlign="center" fontWeight="bold" pb="40px" mx="auto" width="80%">
             With{" "}
             <span className="curve__underline gradient__word">NewsletterDude,</span> 
-            anyone can build a profitable newsletter.
+            {" "}anyone can build a profitable newsletter.
         </Typography>
         <Grid container spacing={6} paddingLeft="20px" paddingRight="20px">
             {BENEFITS.map((benefit, i) => {

@@ -1,4 +1,4 @@
-import { Box, Button, useTheme } from '@mui/material'
+import { Box, Button, Typography, useTheme } from '@mui/material'
 import { tokens } from '../../../../theme'
 
 import { HashLink } from 'react-router-hash-link';
@@ -14,8 +14,8 @@ export default function ScrollToPricing() {
     return (
         <Box>
             <HashLink smooth to="#pricing">
-                <Button sx={{ backgroundColor: colors.grey[100], color: colors.grey[900] }} className="btn btn-1">
-                    <SportsScoreIcon />Subscribe now<SportsScoreIcon />
+                <Button sx={{ backgroundColor: colors.grey[100], color: colors.grey[900], fontWeight: "bold" }} className="btn btn-1">
+                    <SportsScoreIcon /><Typography variant="h5" paddingX="10px">Subscribe now</Typography><SportsScoreIcon />
                 </Button>
             </HashLink>
         </Box>
