@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import './Header.css';
-import { Paper, Box, Menu, MenuItem, IconButton, Link, Toolbar, Typography, useTheme } from '@mui/material';
+import { Box, Menu, MenuItem, IconButton, Link, Toolbar, Typography, useTheme } from '@mui/material';
 import { ColorModeContext, tokens } from '../../../../theme';
 import logo from '../../../../assets/logos/ND_Black_NOCOMPNG.png';
 
@@ -58,7 +58,7 @@ function Header() {
   };
 
   return (
-    <Paper>
+    <Box sx={{ border: "0.1px #d4d4d4 solid" }}>
     <Box sx={{ display: "flex", justifyContent: "space-between" }}>
         <Box display="flex" alignItems="center" width="20%">
           <Link href="/">
@@ -121,7 +121,7 @@ function Header() {
         </IconButton>
       </Box> */}
     </Box>
-    </Paper>
+    </Box>
   )
 }
 

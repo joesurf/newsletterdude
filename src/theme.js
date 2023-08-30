@@ -164,27 +164,27 @@ export const themeSettings = (mode) => {
             fontFamily: ["inter", "serif"].join(","),
             fontSize: 12,
             h1: {
-                fontFamily: ["inter", "serif"].join(","),
+                fontFamily: ["inter"].join(","),
                 fontSize: 40,            
             },
             h2: {
-                fontFamily: ["inter", "serif"].join(","),
+                fontFamily: ["inter"].join(","),
                 fontSize: 32,
             },
             h3: {
-                fontFamily: ["inter", "serif"].join(","),
+                fontFamily: ["inter"].join(","),
                 fontSize: 24,
             },
             h4: {
-                fontFamily: ["inter", "serif"].join(","),
+                fontFamily: ["serif"].join(","),
                 fontSize: 20,
             },
             h5: {
-                fontFamily: ["inter", "serif"].join(","),
+                fontFamily: ["serif"].join(","),
                 fontSize: 16,
             },
             h6: {
-                fontFamily: ["inter", "serif"].join(","),
+                fontFamily: ["serif"].join(","),
                 fontSize: 14,
             }
         }

@@ -18,27 +18,7 @@ import RepeatIcon from '@mui/icons-material/Repeat';
 import EqualizerIcon from '@mui/icons-material/Equalizer';
 
 
-function shuffle(array) {
-  let currentIndex = array.length,  randomIndex;
-
-  // While there remain elements to shuffle.
-  while (currentIndex !== 0) {
-
-    // Pick a remaining element.
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
-  }
-
-  return array;
-}
-
-
 export default function ArticleMarquee() {
-
   const articleInfo = [
 
     // Milestone 1
@@ -69,9 +49,6 @@ export default function ArticleMarquee() {
     { id: '19', type: 'roadmap', position: { x: 1850, y: 100 }, data: { id: 'Optimisation', icon: <RepeatIcon />, description: "Improve and repeat", repeat: true } },
     { id: '20', type: 'roadmap', position: { x: 1850, y: 400 }, data: { id: 'Optimisation', icon: <RepeatIcon />, description: "Improve and repeat", repeat: true } },
 
-    // Milestone 4
-    { id: 'm4', type: 'roadmap', position: { x: 1075, y: 600 }, data: { id: 'Milestone 4', icon: <SportsScoreIcon />, description: "One to Hundred", milestone: '4' } },
-
     // Optimise content
     { id: '21', type: 'roadmap', position: { x: 650, y: 700 }, data: { id: 'Step 21', icon: <CreateIcon />, description: "Optimise your content", repeat: true } },
     { id: '22', type: 'roadmap', position: { x: 400, y: 850 }, data: { id: 'Step 22', icon: <CreateIcon />, description: "Text-related optimisation" } },
@@ -95,11 +72,15 @@ export default function ArticleMarquee() {
 ];
 
   return (
-    <div style={{ "position":"relative" }}>
+    <div style={{ 
+      "position":"relative",
+    }}>
       {["left", "right", "left"].map((direction, i) => {
         return (
           <Marquee key={i} direction={direction} sx={{"marginBottom":"0.1rem"}}>
-            {shuffle(articleInfo).map((article, index) => {
+            {articleInfo
+              .slice(i * Math.floor(articleInfo.length / 3), (i+1) * Math.floor(articleInfo.length / 3))
+              .map((article, index) => {
               return (
                 <div style={{"gridColumn":"span 9 / span 9","@media (minWidth: 1024px)":{"gridColumn":"span 3 / span 3"}}} key={index}>
                   <Link href={article.data.article_link} sx={{ textDecoration: "none" }}>

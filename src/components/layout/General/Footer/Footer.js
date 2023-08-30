@@ -1,16 +1,16 @@
 // import InstagramIcon from "@mui/icons-material/Instagram";
 // import TwitterIcon from '@mui/icons-material/Twitter';
 import Logo from "../../../../assets/logos/ND_Round_LightPNG.png";
-import { Typography, Grid, Box, Paper } from "@mui/material";
+import { Typography, Grid, Box } from "@mui/material";
 
 
 const Footer = () => {
   return (
-    <Paper
-      elevation={1}
+    <Box
       sx={{
         padding: { xs: "2rem" },
         mt: "30px",
+        border: "0.1px #d4d4d4 solid"
       }}
     >
       <Grid container columnSpacing={10} rowSpacing={0}>
@@ -52,7 +52,7 @@ const Footer = () => {
       </Grid>
       <Typography variant="body2"><i>Copyright 2023 NewsletterDude</i></Typography>
 
-    </Paper>
+    </Box>
   );
 };
 

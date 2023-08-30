@@ -23,7 +23,7 @@ const HeroBanner = (props) => {
     <Box
       sx={{
         mt: { xs: "3rem" },
-        mb: "20px",
+        mb: "60px",
         mx: "auto",
         textAlign: "center",
         width: { xs: "90%", lg: "80%" },
@@ -35,6 +35,7 @@ const HeroBanner = (props) => {
           fontWeight: "bold",
           maxWidth: "1400px",
           mx: "auto",
+          fontFamily: "Inter"
         }}
         className="gradient__word"
       >

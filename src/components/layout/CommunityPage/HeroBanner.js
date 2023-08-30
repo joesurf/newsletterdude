@@ -18,7 +18,6 @@ import CommunityJoinButton from "./CommunityJoinButton";
 
 
 const HeroBanner = (props) => {
-
   return (
     <Box
       sx={{

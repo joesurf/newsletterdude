@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import { createBrowserRouter, RouterProvider, Routes, Route } from 'react-router-dom';
 
 import { ColorModeContext, useMode } from './theme';
@@ -18,6 +18,8 @@ import Error404Page from './pages/Error404Page';
 import Header from './components/layout/General/Header/Header';
 import Footer from './components/layout/General/Footer/Footer';
 
+import WebFont from 'webfontloader';
+
 
 
 // 3️⃣ Router singleton created
@@ -36,6 +38,15 @@ function Root() {
   // component below are unchanged
   
   const [theme, colorMode] = useMode();
+
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ['Inter']
+      }
+    });
+   }, []);
+ 
 
   return (
     <ChakraProvider>
