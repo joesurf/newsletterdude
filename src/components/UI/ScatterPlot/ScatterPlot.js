@@ -64,9 +64,9 @@ const MyResponsiveScatterPlot = ({ data }) => {
                 </Box>
             )
         }}
-        onClick={(node) => {
-            window.open(node.data.link, '_blank', 'noreferrer')
-        }}
+        // onClick={(node) => {
+        //     window.open(node.data.link, '_blank', 'noreferrer')
+        // }}
     />
     )
 }
