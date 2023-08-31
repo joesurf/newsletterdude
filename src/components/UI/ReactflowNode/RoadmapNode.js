@@ -5,8 +5,11 @@ import './RoadmapNode.css'
 import ConfirmDialog from '../ConfirmDialog/ConfirmDialog';
 
 import { tokens } from '../../../theme';
-
 import ImageGrid from '../ImageGrid/ImageGrid';
+
+import {
+  useSearchParams,
+} from 'react-router-dom';
 
 
 export function RoadmapNode({ data }) {
@@ -15,8 +18,9 @@ export function RoadmapNode({ data }) {
   // }, []);
 
   const theme = useTheme();
-  // eslint-disable-next-line
   const colors = tokens(theme.palette.mode);
+  // eslint-disable-next-line
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const [infoOpen, setInfoOpen] = useState(false);
 
@@ -55,7 +59,7 @@ export function RoadmapNode({ data }) {
             link={data.article_link}
       >
         <Box>
-          <Typography variant="h2" sx={{ fontWeight: "bold" }}>
+          <Typography variant="h2" sx={{ fontWeight: "bold" }} className="gradient__word">
             {data.description}
           </Typography>
           <Typography variant="h6">
@@ -76,17 +80,47 @@ export function RoadmapNode({ data }) {
             </ol>
             : <Typography variant="h6"><i>Writing in progress...</i></Typography>
           }
-          <Typography variant="h5" mt="10px" fontWeight="bold">
-            Relevant tools
+          <Typography variant="h5" mt="15px" fontWeight="bold">
+            Tools
           </Typography>
             <Grid container sx={{ mt: "5px", textAlign: "center" }}>
               {data.tools ? data.tools.map((tool, i) => {
-                return (<Box key={i} mx="-5px">
-                  <Button onClick={() => {window.open(`https://newsletterdude.com/tools?tool=${tool}`)}}
-                  >
-                    <ImageGrid src={`${process.env.REACT_APP_SUPABASE_URL}/storage/v1/object/public/Tool/${tool}_logo.png`} alt="logo" maxWidth="30px" />
-                  </Button>
+                return (
+                <Box key={i} mx="-5px" width="50px" onClick={() => {window.open(`https://newsletterdude.com/tools?tool=${tool}`)}}
+                  sx={{
+                    "&:hover": { cursor: "pointer" } 
+                  }}
+                >
+                    <ImageGrid src={`${process.env.REACT_APP_SUPABASE_URL}/storage/v1/object/public/Tool/${tool}_logo.png`} alt="logo" maxWidth="25px" />
                 </Box>)
+              })
+              : <Typography variant="h6"><i>None</i></Typography>}
+            </Grid>
+            <Typography variant="h5" mt="15px" fontWeight="bold">
+              Newsletters
+            </Typography>
+            <Grid container spacing={2}>
+              {data.newsletters ? data.newsletters.map((newsletter, i) => {
+                return (
+                  <Grid key={i} item xs={12} sm={6} lg={4} sx={{
+                    "&:hover": { cursor: "pointer" },
+                    textShadow: "0.5px 0.5px 5px grey"
+                  }}
+                    onClick={() => {
+                      setInfoOpen(false)
+                      window.scroll({
+                        top: 900,
+                        behavior: "smooth"
+                      })
+                      setSearchParams({ newsletter: newsletter.toLowerCase() })
+
+                    }}
+                  >
+                      <Typography variant="h6" sx={{ fontWeight: 500 }}>
+                          {newsletter}
+                      </Typography>
+                  </Grid>
+                )
               })
               : <Typography variant="h6"><i>None</i></Typography>}
             </Grid>

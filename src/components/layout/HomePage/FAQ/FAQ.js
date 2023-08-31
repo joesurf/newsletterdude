@@ -33,7 +33,7 @@ const FAQ = (props) => {
       <Box>
         {questionResponses.map((questionResponse, i) => {
           return (
-          <Accordion sx={{ boxShadow: "0px 5px 25px rgba(0,0,0,0.15)" }}>
+          <Accordion key={i} sx={{ boxShadow: "0px 5px 25px rgba(0,0,0,0.15)" }}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"

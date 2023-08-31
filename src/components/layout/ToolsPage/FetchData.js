@@ -16,7 +16,7 @@ export const fetchdata = async ()=>{
             return data;
         }
     } catch (error) {
-        alert(error.message);
+        console.log(error.message);
     } finally {
         // console.log(user);
     }
@@ -45,7 +45,7 @@ export const fetchcategory = async () => {
             return unique_values;
         }
     } catch (error) {
-        alert(error.message);
+        console.log(error.message);
     } finally {
         // console.log(user);
     }  

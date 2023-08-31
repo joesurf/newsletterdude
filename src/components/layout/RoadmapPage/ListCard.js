@@ -4,7 +4,7 @@ import { Grid, Box, Typography, Paper, useTheme, Divider } from '@mui/material'
 import { tokens } from '../../../theme'
 
 import ConfirmDialog from '../../UI/ConfirmDialog/ConfirmDialog'
-import ImageGrid from '../../UI/ImageGrid/ImageGrid';
+// import ImageGrid from '../../UI/ImageGrid/ImageGrid';
 
 
 const RESPONSIVE_WIDTH = 600
@@ -56,7 +56,7 @@ function ListCard({ case_study }) {
                     alignItems="center" 
                     justifyContent={windowWidth > RESPONSIVE_WIDTH ? "" : "center"}
                 >
-                    <ImageGrid src={case_study.image} maxWidth="50px" />
+                    {/* <ImageGrid src={`${process.env.REACT_APP_SUPABASE_URL}/storage/v1/object/public/Newsletter/${case_study.image_id}`} maxWidth="50px" /> */}
                     <Typography variant="h4" sx={{ color: colors.grey[100] }}>
                         {case_study.title}
                     </Typography>
@@ -93,32 +93,9 @@ function ListCard({ case_study }) {
                 <Typography variant="h5" fontWeight="bold" mt="10px">
                     Steps Involved
                 </Typography>
-                {/* {data.framework ? 
-                    <ol style={{ marginLeft: "15px" }}>
-                    {data.framework.map((item, i) => {
-                        return <li key={i}>
-                        <Typography variant="h6">
-                            {item}
-                        </Typography>
-                        </li>    
-                    })}
-                    </ol>
-                    : <Typography variant="h6"><i>Writing in progress...</i></Typography>
-                } */}
                 <Typography variant="h5" mt="10px" fontWeight="bold">
                     Relevant tools
                 </Typography>
-                {/* <Grid container sx={{ mt: "5px", textAlign: "center" }}>
-                {data.tools ? data.tools.map((tool, i) => {
-                    return (<Box key={i} mx="-5px">
-                    <Button onClick={() => {window.open(`https://newsletterdude.com/tools?tool=${tool}`)}}
-                    >
-                        <ImageGrid src={`${process.env.REACT_APP_SUPABASE_URL}/storage/v1/object/public/Tool/${tool}_logo.png`} alt="logo" maxWidth="30px" />
-                    </Button>
-                    </Box>)
-                })
-                : <Typography variant="h6"><i>None</i></Typography>}
-                </Grid> */}
             </Box>
         </ConfirmDialog>
     </Grid>

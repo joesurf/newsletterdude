@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Typography } from '@mui/material'
 import MyResponsiveScatterPlot from '../../UI/ScatterPlot/ScatterPlot'
-import { mockgraphdata } from './NewsletterGraphData'
+import { fetchnewsletterdata } from './NewsletterGraphData'
 
 function NewsletterGraph() {
+    const [newsletterdata, setNewsletterdata] = useState([])
+
+    useEffect(() => {
+        const fetchdata = async () => {
+            fetchnewsletterdata()
+                .then(res => setNewsletterdata(res))
+        }
+        fetchdata()
+    })
   return (
     <Box display="flex" flexDirection="column">
         <Box
@@ -33,7 +42,7 @@ function NewsletterGraph() {
             </Typography>
         </Box>
         <Box width="90%" height="500px" margin="auto">
-            <MyResponsiveScatterPlot data={mockgraphdata} />
+            <MyResponsiveScatterPlot data={newsletterdata} />
         </Box>
     </Box>
   )

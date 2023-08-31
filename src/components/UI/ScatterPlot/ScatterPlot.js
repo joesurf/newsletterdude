@@ -20,7 +20,7 @@ const MyResponsiveScatterPlot = ({ data }) => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: '# Subscribers (`00,000)',
+            legend: '# Subscribers (thousands)',
             legendPosition: 'middle',
             legendOffset: 46
         }}

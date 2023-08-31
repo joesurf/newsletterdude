@@ -1,58 +1,49 @@
-export const mockgraphdata = [
-    {
-      "id": "Aggregator",
-      "data": [
-        {
-            "title": "The Hustle",
-            "x": 20,
-            "y": 20,
-            "link": "https://thehustle.co/"
-        },
-        {
-            "title": "MorningBrew",
-          "x": 40,
-          "y": 50,
-          "link": "https://www.morningbrew.com/"
-        },
-      ]
+import { supabase } from '../../../api';
+
+
+const convertSupabaseDataToGraphData = (data) => {
+  let graphdata = {
+    "Aggregator": {
+      id: "Aggregator",
+      data: []
     },
-    {
-      "id": "Platform",
-      "data": [
-        {
-            "title": "StarterStory",
-          "x": 10,
-          "y": 1,
-          "link": "https://www.starterstory.com/"
-        },
-      ]
+    "Platform": {
+      id: "Platform",
+      data: []
     },
-    {
-      "id": "Niche",
-      "data": [
-        {
-            "title": "Making Sense of Cents",
-          "x": 1,
-          "y": 1,
-          "link": "https://www.makingsenseofcents.com/"
-        },
-        {
-            "title": "The Browser",
-            "x": 1.36,
-            "y": 1.6,
-            "link": "https://thebrowser.com/"
-        }
-      ]
+    "Niche": {
+      id: "Niche",
+      data: []
     },
-    {
-        "id": "Newspaper",
-        "data": [
-            {
-                "title": "Wall Street Journal",
-                "x": 0,
-                "y": 0,
-                "link": ""
-            }
-        ]
-    }
-]
+  }
+  
+  for (var i = 0; i <  data.length; i++) {
+    let newsletterInfo = data[i]
+    newsletterInfo["x"] = newsletterInfo.subscribers
+    newsletterInfo["y"] = newsletterInfo.revenue
+    
+    graphdata[newsletterInfo.category]["data"].push(newsletterInfo) 
+  }
+
+  return Object.values(graphdata)
+}
+
+export const fetchnewsletterdata = async ()=>{
+  try {
+      let { data, error, status } = await supabase
+          .from("Newsletter")
+          .select(`*`)
+
+      if (error && status !== 406) {
+          throw error;
+      }
+
+      if (data) {
+          return convertSupabaseDataToGraphData(data);
+      }
+  } catch (error) {
+      console.log(error.message);
+  } finally {
+      // console.log(user);
+  }
+};
