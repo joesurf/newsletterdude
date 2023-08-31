@@ -71,7 +71,7 @@ export function RoadmapNode({ data }) {
           {data.framework ? 
             <ol style={{ marginLeft: "15px" }}>
               {data.framework.map((item, i) => {
-                return <li key={i}>
+                return <li key={i} style={{ fontFamily: ["serif"] }}>
                   <Typography variant="h6">
                     {item}
                   </Typography>

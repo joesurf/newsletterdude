@@ -15,7 +15,7 @@ import { fetchnewslettercategory, fetchnewsletterdata } from './FetchCaseStudies
 // TODO: Fix two-word category
 
 function CaseStudiesSection() {
-    const [queryParameters] = useSearchParams()
+    const [queryParameters, setQueryParameters] = useSearchParams()
 
     const [input, setInput] = useState('')
     const [category, setCategory] = useState("");
@@ -122,8 +122,19 @@ function CaseStudiesSection() {
             {category 
                     ? <CloseIcon onClick={() => { setCategory("") }} sx={{ 
                         "&:hover": { color: "red", cursor: "pointer" },
+                        marginRight: "10px"
                      }} />
                     : <></>}
+            {queryParameters.get('newsletter') ? 
+                <>{input}         
+             <CloseIcon onClick={() => { 
+                setInput("") 
+                queryParameters.delete('newsletter')
+                setQueryParameters(queryParameters)
+            }} sx={{ 
+                "&:hover": { color: "red", cursor: "pointer" },
+                }} /></>
+            : <></>}
         </Box>
         <Menu
             id="basic-menu"

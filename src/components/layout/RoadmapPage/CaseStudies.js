@@ -15,7 +15,7 @@ function CaseStudies({ newsletterdata, searchstring, category }) {
                         return element;
                     }
                     else {
-                        return element.newsletter_category.includes((category))
+                        return element.category.includes((category))
                     }
                 })
                 .filter((element) => {

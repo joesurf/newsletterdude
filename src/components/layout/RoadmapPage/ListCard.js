@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { Grid, Box, Typography, Paper, useTheme, Divider } from '@mui/material'
 import { tokens } from '../../../theme'
 
-import ConfirmDialog from '../../UI/ConfirmDialog/ConfirmDialog'
+// import ConfirmDialog from '../../UI/ConfirmDialog/ConfirmDialog'
 // import ImageGrid from '../../UI/ImageGrid/ImageGrid';
 
 
@@ -24,17 +24,18 @@ function ListCard({ case_study }) {
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
-    const [infoOpen, setInfoOpen] = useState(false);
+    // const [infoOpen, setInfoOpen] = useState(false);
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        window.open(case_study.article_link, '_blank')
   
-        if (!infoOpen) setInfoOpen(true)
+        // if (!infoOpen) setInfoOpen(true)
     }
   
-    const handleClose = () => {
-      setInfoOpen(false);
-    }  
+    // const handleClose = () => {
+    //   setInfoOpen(false);
+    // }  
 
     useEffect(() => {
         function handleResize() {
@@ -78,7 +79,7 @@ function ListCard({ case_study }) {
                 </Box>
             </Box>
         </Item>
-        <ConfirmDialog
+        {/* <ConfirmDialog
             open={infoOpen}
             onClose={handleClose}
             link={case_study.article_link}
@@ -97,7 +98,7 @@ function ListCard({ case_study }) {
                     Relevant tools
                 </Typography>
             </Box>
-        </ConfirmDialog>
+        </ConfirmDialog> */}
     </Grid>
   )
 }

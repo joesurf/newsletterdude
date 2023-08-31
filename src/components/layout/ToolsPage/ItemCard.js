@@ -1,20 +1,23 @@
-import React, { useState } from "react";
-import { Box, Button, Grid, Card, CardContent, CardMedia, Typography } from "@mui/material";
-import ConfirmDialog from "../../UI/ConfirmDialog/ConfirmDialog";
+import React from "react";
+import { 
+  // Box, Button, 
+  Grid, Card, CardContent, CardMedia, Typography } from "@mui/material";
+// import ConfirmDialog from "../../UI/ConfirmDialog/ConfirmDialog";
 
 
 export const ItemCard = (props) => {
-  const [infoOpen, setInfoOpen] = useState(false);
+  // const [infoOpen, setInfoOpen] = useState(false);
 
   const handleSubmit = (event) => {
       event.preventDefault();
+      window.open(props.article_link, '_blank')
 
-      if (!infoOpen) setInfoOpen(true)
+      // if (!infoOpen) setInfoOpen(true)
   }
 
-  const handleClose = () => {
-    setInfoOpen(false);
-  }
+  // const handleClose = () => {
+  //   setInfoOpen(false);
+  // }
 
   const findEarliestWord = (sentence) => {
     const sentenceArray = sentence.split(" ");
@@ -59,7 +62,7 @@ export const ItemCard = (props) => {
           {props.description.length < 100 ? props.description : props.description.slice(0, 100) + findEarliestWord(props.description.slice(100)) + "..."}
         </Typography>
       </CardContent>
-      <ConfirmDialog
+      {/* <ConfirmDialog
             open={infoOpen}
             onClose={handleClose}
             link={props.article_link}
@@ -79,7 +82,7 @@ export const ItemCard = (props) => {
                 )
               })}
             </Box>
-        </ConfirmDialog>  
+        </ConfirmDialog>   */}
     </Grid>
   );
 };
