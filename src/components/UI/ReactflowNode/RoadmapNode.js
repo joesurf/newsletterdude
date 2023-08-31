@@ -86,44 +86,47 @@ export function RoadmapNode({ data }) {
             <Grid container sx={{ mt: "5px", textAlign: "center" }}>
               {data.tools ? data.tools.map((tool, i) => {
                 return (
-                <Box key={i} mx="-5px" width="50px" onClick={() => {window.open(`https://newsletterdude.com/tools?tool=${tool}`)}}
-                  sx={{
-                    "&:hover": { cursor: "pointer" } 
-                  }}
-                >
-                    <ImageGrid src={`${process.env.REACT_APP_SUPABASE_URL}/storage/v1/object/public/Tool/${tool}_logo.png`} alt="logo" maxWidth="25px" />
-                </Box>)
-              })
+                  <Box key={i} mx="-5px" width="50px" onClick={() => {window.open(`https://newsletterdude.com/tools?tool=${tool}`)}}
+                    sx={{
+                      "&:hover": { cursor: "pointer" } 
+                    }}
+                  >
+                      <ImageGrid src={`${process.env.REACT_APP_SUPABASE_URL}/storage/v1/object/public/Tool/${tool}_logo.png`} alt="logo" maxWidth="25px" />
+                  </Box>)
+                })
               : <Typography variant="h6"><i>None</i></Typography>}
             </Grid>
             <Typography variant="h5" mt="15px" fontWeight="bold">
               Newsletters
             </Typography>
-            <Grid container spacing={2}>
-              {data.newsletters ? data.newsletters.map((newsletter, i) => {
-                return (
-                  <Grid key={i} item xs={12} sm={6} lg={4} sx={{
-                    "&:hover": { cursor: "pointer" },
-                    textShadow: "0.5px 0.5px 5px grey"
-                  }}
-                    onClick={() => {
-                      setInfoOpen(false)
-                      window.scroll({
-                        top: 900,
-                        behavior: "smooth"
-                      })
-                      setSearchParams({ newsletter: newsletter.toLowerCase() })
+            {data.newsletters ? 
 
+            <Grid container spacing={2} sx={{ mt: "5px" }}>
+                {data.newsletters.map((newsletter, i) => {
+                  return (
+                    <Grid key={i} item xs={12} sm={6} lg={4} sx={{
+                      "&:hover": { cursor: "pointer" },
+                      textShadow: "0.5px 0.5px 5px grey"
                     }}
-                  >
-                      <Typography variant="h6" sx={{ fontWeight: 500 }}>
-                          {newsletter}
-                      </Typography>
-                  </Grid>
-                )
-              })
-              : <Typography variant="h6"><i>None</i></Typography>}
+                      onClick={() => {
+                        setInfoOpen(false)
+                        window.scroll({
+                          top: 900,
+                          behavior: "smooth"
+                        })
+                        setSearchParams({ newsletter: newsletter.toLowerCase() })
+
+                      }}
+                    >
+                        <Typography variant="h6" sx={{ fontWeight: 500 }}>
+                            {newsletter}
+                        </Typography>
+                    </Grid>
+                  )
+                })}
             </Grid>
+            : <Typography variant="h6"><i>None</i></Typography>}
+
         </Box>
       </ConfirmDialog>
       <Handle type="source" position={Position.Top} id="top" />

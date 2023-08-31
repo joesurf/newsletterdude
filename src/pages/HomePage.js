@@ -30,14 +30,9 @@ const HomePage = () => {
       </Box>
       <ArticleMarquee />
 
-      {/* <OurMembers /> */}
       <Box sx={styles.container}>
-        {/* <Headline /> */}
-        {/* <Pillars /> */}
         <Features />
         <NewsletterGraph />
-
-      {/* TODO: Who is this for page: individuals, businesses, individuals building a business */}
       </Box>
 
       <Benefits />

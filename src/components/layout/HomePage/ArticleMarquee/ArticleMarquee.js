@@ -3,7 +3,7 @@
 import Marquee from "react-fast-marquee";
 import ArticleCard from "../../../UI/ArticleCard/ArticleCard";
 
-import { Link } from "@mui/material";
+import { Box } from "@mui/material";
 
 import BuildIcon from '@mui/icons-material/Build';
 import PsychologyIcon from '@mui/icons-material/Psychology';
@@ -82,11 +82,13 @@ export default function ArticleMarquee() {
               .slice(i * Math.floor(articleInfo.length / 3), (i+1) * Math.floor(articleInfo.length / 3))
               .map((article, index) => {
               return (
-                <div style={{"gridColumn":"span 9 / span 9","@media (minWidth: 1024px)":{"gridColumn":"span 3 / span 3"}}} key={index}>
-                  <Link href={article.data.article_link} sx={{ textDecoration: "none" }}>
-                    <ArticleCard title={article.data.description} icon={article.data.icon} />
-                  </Link>
-                </div>
+                <Box style={{"gridColumn":"span 9 / span 9","@media (minWidth: 1024px)":{"gridColumn":"span 3 / span 3"}}} key={index}>
+                  <ArticleCard 
+                    title={article.data.description} 
+                    icon={article.data.icon}
+                    link={article.data.article_link}
+                  />
+                </Box>
               );
             })}
           </Marquee>

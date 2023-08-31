@@ -31,8 +31,18 @@ export const initialNodes = [
         framework: ["What is the current pricing and your goal?", "What are your expertise and passion, or something you are good at?", "What is the end goal, how much time do you have and is the commitment?"],
         newsletters: ["The Hustle", "MorningBrew", "StarterStory", "Making Sense Of Cents"]
     }},
-    { id: '2', type: 'roadmap', position: { x: 350, y: 100 }, data: { id: 'Step 2', icon: <PsychologyIcon />, description: "Find your expertise", article_link: "https://blog.newsletterdude.com/find-your-expertise/" } },
-    { id: '4', type: 'roadmap', position: { x: 350, y: 250 }, data: { id: 'Step 4', icon: <PsychologyIcon />, description: "Determine your content", article_link: "https://blog.newsletterdude.com/craft-your-content-strategy-for-building-a-newsletter/" } },
+    { id: '2', type: 'roadmap', position: { x: 350, y: 100 }, data: { 
+        id: 'Step 2', 
+        icon: <PsychologyIcon />, 
+        description: "Find your expertise", 
+        article_link: "https://blog.newsletterdude.com/find-your-expertise/" 
+    }},
+    { id: '4', type: 'roadmap', position: { x: 350, y: 250 }, data: { 
+        id: 'Step 4', 
+        icon: <PsychologyIcon />, 
+        description: "Determine your content", 
+        article_link: "https://blog.newsletterdude.com/craft-your-content-strategy-for-building-a-newsletter/" 
+    }},
     { id: '3', type: 'roadmap', position: { x: 350, y: 400 }, data: { id: 'Step 3', icon: <PeopleIcon />, description: "Identify your audience", article_link: "https://blog.newsletterdude.com/identify-your-audience/" } },
     { id: '5', type: 'roadmap', position: { x: 600, y: 100 }, data: { id: 'Step 5', icon: <BuildIcon />, description: "Understand the tech", article_link: "https://blog.newsletterdude.com/the-tech-stack-of-a-newsletter/" } },
     { id: '6', type: 'roadmap', position: { x: 600, y: 250 }, data: { id: 'Step 6', icon: <SportsScoreIcon />, description: "Draw the user journey", milestone: '1', article_link: "https://blog.newsletterdude.com/draw-the-user-journey/" } },
