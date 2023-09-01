@@ -1,10 +1,11 @@
 import { styled } from '@mui/material/styles';
 import React, { useState, useEffect } from 'react'
-import { Grid, Box, Typography, Paper, useTheme, Divider } from '@mui/material'
+import { Grid, Box, Typography, Paper, useTheme, Divider, Tooltip } from '@mui/material'
 import { tokens } from '../../../theme'
 
 // import ConfirmDialog from '../../UI/ConfirmDialog/ConfirmDialog'
 // import ImageGrid from '../../UI/ImageGrid/ImageGrid';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
 
 
 const RESPONSIVE_WIDTH = 600
@@ -60,6 +61,9 @@ function ListCard({ case_study }) {
                     {/* <ImageGrid src={`${process.env.REACT_APP_SUPABASE_URL}/storage/v1/object/public/Newsletter/${case_study.image_id}`} maxWidth="50px" /> */}
                     <Typography variant="h4" sx={{ color: colors.grey[100] }}>
                         {case_study.title}
+                        <Tooltip title="Values are estimated. Click to visit the website." placement="top-end">
+                            <InfoOutlinedIcon fontSize="small" onClick={() => { window.open(case_study.website_link, '_blank', 'noreferrer') }} />
+                        </Tooltip>
                     </Typography>
                 </Box>
                 {windowWidth > RESPONSIVE_WIDTH ? <></> : <Divider variant="middle" sx={{ my: "10px" }} />}

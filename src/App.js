@@ -20,6 +20,7 @@ import Footer from './components/layout/General/Footer/Footer';
 
 import WebFont from 'webfontloader';
 
+import NetworkDetector from './Hoc/NetworkDetector';
 
 
 // 3️⃣ Router singleton created
@@ -28,9 +29,11 @@ const router = createBrowserRouter([
 ]);
 
 // 4️⃣ RouterProvider added
-export default function App() {
+function App() {
   return <RouterProvider router={router} />;
 }
+
+export default NetworkDetector(App)
 
 // 1️⃣ Changed from App to Root
 function Root() {

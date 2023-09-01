@@ -7,7 +7,7 @@ export default function FilterItems({searchstring, list, category}) {
 
     useEffect(() => {
         setFilteredList(
-            list     
+            (Array.isArray(list) ? list : [])     
                 .filter((element) => {
                     if (category === '') {
                         return element;

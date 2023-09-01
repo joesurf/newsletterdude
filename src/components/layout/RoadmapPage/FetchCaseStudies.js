@@ -5,8 +5,8 @@ const convertSupabaseDataToListData = (data) => {
         let newsletterInfo = data[i]
         newsletterInfo["data"] = [
             {
-                header: "Steps Involved",
-                value: "80%"
+                header: "Subscribers",
+                value: newsletterInfo.subscribers === 0 ? "-" : `~${(newsletterInfo.subscribers * 100000).toLocaleString("en-US")}`
             },
             {
                 header: "Category",
@@ -14,7 +14,7 @@ const convertSupabaseDataToListData = (data) => {
             },
             {
                 header: "Revenue",
-                value: newsletterInfo.revenue < 1 ? `$${newsletterInfo.revenue*1000}k` : `$${newsletterInfo.revenue}m`
+                value: newsletterInfo.revenue === 0 ? "-" : (newsletterInfo.revenue < 1 ? `$${newsletterInfo.revenue*1000}k` : `$${newsletterInfo.revenue}m`)
             }
         ]
         

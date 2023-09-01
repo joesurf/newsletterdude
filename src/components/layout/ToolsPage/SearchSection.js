@@ -69,7 +69,8 @@ function SearchSection() {
         <Autocomplete
             disablePortal
             id="search-bar"
-            options={list.map(item => item.title)}
+            options={(Array.isArray(list) ? list : [])
+                .map(item => item.title)}
             renderInput={(params) => 
                 <TextField {...params}
                     label="Find a tool"
@@ -107,7 +108,7 @@ function SearchSection() {
             'aria-labelledby': 'basic-button',
             }}
         >
-            {categories
+            {(Array.isArray(categories) ? categories : [])
                 .sort(function (a, b) {
                     if (a < b) {
                         return -1;

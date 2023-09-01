@@ -45,5 +45,6 @@ export const fetchnewsletterdata = async ()=>{
       console.log(error.message);
   } finally {
       // console.log(user);
+      return []
   }
 };

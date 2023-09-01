@@ -1,0 +1,17 @@
+.internet-error {
+    height: 60px;
+    background: #58201e;
+    margin-top: 0;
+    font-size: 20px;
+    display: flex;
+  }
+  
+.internet-error p {
+    font-size: 25px;
+    font-family: 'inter';
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 60px;
+    color: #fff;
+    margin: auto;
+}

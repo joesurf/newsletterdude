@@ -19,6 +19,7 @@ export const fetchdata = async ()=>{
         console.log(error.message);
     } finally {
         // console.log(user);
+        return []
     }
 };
 
@@ -48,5 +49,6 @@ export const fetchcategory = async () => {
         console.log(error.message);
     } finally {
         // console.log(user);
+        return []
     }  
 }
