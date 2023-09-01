@@ -4,8 +4,9 @@ import { Grid, Box, Typography, Paper, useTheme, Divider, Tooltip } from '@mui/m
 import { tokens } from '../../../theme'
 
 // import ConfirmDialog from '../../UI/ConfirmDialog/ConfirmDialog'
-// import ImageGrid from '../../UI/ImageGrid/ImageGrid';
+import ImageGrid from '../../UI/ImageGrid/ImageGrid';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 
 
 const RESPONSIVE_WIDTH = 600
@@ -25,13 +26,13 @@ function ListCard({ case_study }) {
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
-    // const [infoOpen, setInfoOpen] = useState(false);
+    const [infoOpen, setInfoOpen] = useState(false);
 
     const handleSubmit = (event) => {
         event.preventDefault();
         window.open(case_study.article_link, '_blank')
   
-        // if (!infoOpen) setInfoOpen(true)
+        if (!infoOpen) setInfoOpen(true)
     }
   
     // const handleClose = () => {
@@ -47,9 +48,13 @@ function ListCard({ case_study }) {
       }, [])
 
   return (
-    <Grid onClick={handleSubmit} item xs={12} sx={{
-        "&:hover": { cursor: "pointer" }
-    }}>
+    <Grid 
+        onClick={handleSubmit} 
+        item xs={12} 
+        sx={{
+            "&:hover": { cursor: "pointer" }
+        }}
+    >
         <Item>
             <Box display="flex" flexDirection={windowWidth > RESPONSIVE_WIDTH ? "row" : "column"}>
                 <Box 
@@ -58,8 +63,10 @@ function ListCard({ case_study }) {
                     alignItems="center" 
                     justifyContent={windowWidth > RESPONSIVE_WIDTH ? "" : "center"}
                 >
-                    {/* <ImageGrid src={`${process.env.REACT_APP_SUPABASE_URL}/storage/v1/object/public/Newsletter/${case_study.image_id}`} maxWidth="50px" /> */}
-                    <Typography variant="h4" sx={{ color: colors.grey[100] }}>
+                    {case_study.image_id 
+                    ? <ImageGrid src={`${process.env.REACT_APP_SUPABASE_URL}/storage/v1/object/public/NewsletterDude/${case_study.image_id}`} maxWidth="50px" />
+                    : <QuestionMarkIcon />}
+                    <Typography variant="h4" sx={{ color: colors.grey[100], mx: "10px", textAlign: "left" }}>
                         {case_study.title}
                         <Tooltip title="Values are estimated. Click to visit the website." placement="top-end">
                             <InfoOutlinedIcon fontSize="small" onClick={() => { window.open(case_study.website_link, '_blank', 'noreferrer') }} />
@@ -88,19 +95,12 @@ function ListCard({ case_study }) {
             onClose={handleClose}
             link={case_study.article_link}
         >
-            <Box>
-                <Typography variant="h2" sx={{ fontWeight: "bold" }}>
-                    {case_study.title}
-                </Typography>
-                <Typography variant="h6">
-                    {case_study.description}
-                </Typography>
-                <Typography variant="h5" fontWeight="bold" mt="10px">
-                    Steps Involved
-                </Typography>
-                <Typography variant="h5" mt="10px" fontWeight="bold">
-                    Relevant tools
-                </Typography>
+            <Box width="500px" height="500px">
+                <iframe 
+                    src={case_study.website_link}
+                    title="W3Schools Free Online Web Tutorials"
+                    style={{ height: "500px", width: "500px" }}
+                />
             </Box>
         </ConfirmDialog> */}
     </Grid>
