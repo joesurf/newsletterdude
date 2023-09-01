@@ -126,7 +126,7 @@ function CaseStudiesSection() {
                      }} />
                     : <></>}
             {queryParameters.get('newsletter') ? 
-                <>{input}         
+                <><span style={{ color: 'red', fontSize: "12px" }}>{input.toUpperCase()}</span>
              <CloseIcon onClick={() => { 
                 setInput("") 
                 queryParameters.delete('newsletter')

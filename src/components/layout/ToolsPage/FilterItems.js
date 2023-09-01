@@ -24,6 +24,9 @@ export default function FilterItems({searchstring, list, category}) {
                         return element.title.toLowerCase().includes(searchstring)
                     }
                 })
+                .filter((element) => {
+                    return element.published;
+                })
         )
     }, [list, category, searchstring])
 
