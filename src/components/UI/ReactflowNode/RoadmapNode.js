@@ -97,7 +97,7 @@ export function RoadmapNode({ data }) {
             Tools
           </Typography>
           <Grid container sx={{ mt: "5px", textAlign: "center" }}>
-            {data.tools ? data.tools.map((tool, i) => {
+            {data.tools.length > 0 ? data.tools.map((tool, i) => {
               return (
                 <Box key={i} mx="-5px" width="50px" onClick={() => {window.open(`https://newsletterdude.com/tools?tool=${tool}`)}}
                   sx={{

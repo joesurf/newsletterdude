@@ -84,7 +84,7 @@ export const initialNodes = [
         article_link: "https://blog.newsletterdude.com/the-tech-stack-of-a-newsletter/",
         category: ROADMAP_CATEGORIES["Proj Management"],
         tools: [],
-        framework: [],
+        framework: ["Understand the basic technology behind all newsletters", "Understand the advanced technology that some newsletters have", "Understand your own technology needs"],
         newsletters: [],
     }},
     { id: '6', type: 'roadmap', position: { x: 600, y: 250 }, data: { 
@@ -95,7 +95,7 @@ export const initialNodes = [
         article_link: "https://blog.newsletterdude.com/draw-the-user-journey/",
         category: ROADMAP_CATEGORIES["User Experience"],
         tools: ["figma"],
-        framework: [],
+        framework: ["What are the exact things a user will see upon landing on your website?", "What are the users' call to action? What do you want them to do?", "What do you want users to feel, while they are using your website, and after they have left?"],
         newsletters: [],
     }},
 
@@ -107,7 +107,7 @@ export const initialNodes = [
         article_link: "https://blog.newsletterdude.com/market-size-understanding-the-potential-of-your-newsletter-business/",
         category: ROADMAP_CATEGORIES["Market Research"],
         tools: [],
-        framework: [],
+        framework: ["Determine the Total Addressable Market (TAM)", "Determine the Serviceable Addressable Market (SAM)", "Determine the Serviceable Obtainable Market (SOM)"],
         newsletters: [],
     }},
     { id: '8', type: 'roadmap', position: { x: 850, y: 250 }, data: { 
@@ -117,14 +117,14 @@ export const initialNodes = [
         article_link: "https://blog.newsletterdude.com/idea-validation-for-building-your-newsletter/",
         category: ROADMAP_CATEGORIES["Market Fit"],
         tools: [],
-        framework: [],
+        framework: ["Reference: Learn from people/competitors who are already doing what you want to do", "Ask: Share your idea and any sketch with the community through various forums", "Commit: Get people to actually commit to seeing your newsletter launched"],
         newsletters: [],
     }},
     { id: '9', type: 'roadmap', position: { x: 850, y: 100 }, data: { 
         id: 'Step 9', 
         icon: <BuildIcon />, 
         description: "Select your tools",
-        article_link: "",
+        article_link: "https://newsletterdude.com/tools",
         category: ROADMAP_CATEGORIES["Proj Management"],
         tools: ["interact"],
         framework: [],
@@ -137,7 +137,7 @@ export const initialNodes = [
         article_link: "https://blog.newsletterdude.com/your-first-content/",
         category: ROADMAP_CATEGORIES["Content Strategy"],
         tools: ["ghost", "notion", "wordpress"],
-        framework: [],
+        framework: ["Start with your strongest content", "Play safe by referencing the best content in similar newsletters", "Be unique by adding your own touch, whether an opinion, or a different angle"],
         newsletters: [],
     }},
     { id: '11', type: 'roadmap', position: { x: 1100, y: 100 }, data: { 
@@ -147,7 +147,7 @@ export const initialNodes = [
         article_link: "https://blog.newsletterdude.com/setting-up-your-email-sequence-for-building-a-newsletter/",
         category: ROADMAP_CATEGORIES["User Experience"],
         tools: ["ghost", "convertkit"],
-        framework: [],
+        framework: ["An Email When Users Subscribe", "Show your cards early", "Consistent Updates, Sharing, and Value Offerings", ],
         newsletters: [],
     }},
     { id: '12', type: 'roadmap', position: { x: 1350, y: 250 }, data: { 
@@ -158,7 +158,7 @@ export const initialNodes = [
         article_link: "https://blog.newsletterdude.com/the-mvp-minimum-viable-product-launch/",
         category: ROADMAP_CATEGORIES["Market Fit"],
         tools: ["producthunt", "reddit"],
-        framework: [],
+        framework: ["The Only Way to Know is to Try", "Focus on Getting Feedback and Making Continuous Improvements", "What Makes People Willing to Pay for a Newsletter?"],
         newsletters: [],
     }},
 
@@ -170,7 +170,7 @@ export const initialNodes = [
         article_link: "https://blog.newsletterdude.com/get-feedback-from-potential-customers/",
         category: ROADMAP_CATEGORIES["Audience Intel"],
         tools: ["interact", "fathom analytics", "zoom"],
-        framework: [],
+        framework: ["Listen to People’s Experiences on Using Your Product and Identify Improvements", "Ask for Suggestions on How to Add More Value, or for Addressing Any Plans You Have", "If They’re Paying, Find out Why; and If They’re Not, Find out How to Make Them Change Their Mind"],
         newsletters: [],
     }},
     { id: '14', type: 'roadmap', position: { x: 1600, y: 325 }, data: { 
@@ -180,7 +180,7 @@ export const initialNodes = [
         article_link: "https://blog.newsletterdude.com/get-testimonials-from-your-fans/",
         category: ROADMAP_CATEGORIES["Audience Intel"],
         tools: ["senja", "fomo"],
-        framework: [],
+        framework: ["Ask for it, otherwise you won't get it", "Grab as many opportunities as possible, especially if someone has shown a liking to your newsletter", "Speed up the process by using tools such as Senja for collecting of testimonials"],
         newsletters: [],
     }},
     { id: '15', type: 'roadmap', position: { x: 1850, y: 250 }, data: { 
@@ -190,7 +190,7 @@ export const initialNodes = [
         article_link: "https://blog.newsletterdude.com/pricing-your-newsletter/",
         category: ROADMAP_CATEGORIES["Sales"],
         tools: [],
-        framework: [],
+        framework: ["Don't undervalue yourself", "Understanding the Value of Your Content", "Effectively Communicating the Value to Potential Customers"],
         newsletters: [],
     }},
     { id: '16', type: 'roadmap', position: { x: 2100, y: 175 }, data: { 
@@ -200,7 +200,7 @@ export const initialNodes = [
         article_link: "https://blog.newsletterdude.com/distribution-channels/",
         category: ROADMAP_CATEGORIES["Distribution"],
         tools: [],
-        framework: [],
+        framework: ["Understand the Various Distribution Channels", "Extend Your Reach by Writing on Other Platforms", "Bring Readers Back to Your Website Through a CTA or a Freebie"],
         newsletters: [],
     }},
     { id: '17', type: 'roadmap', position: { x: 2100, y: 325 }, data: { 
@@ -210,7 +210,7 @@ export const initialNodes = [
         article_link: "https://blog.newsletterdude.com/marketing-your-newsletter-tips-for-building-an-engaged-audience/",
         category: ROADMAP_CATEGORIES["Marketing"],
         tools: [],
-        framework: [],
+        framework: ["Be on as Many Channels as Possible", "Some Channels Are Better Than Others", "Virality vs Conversations"],
         newsletters: [],
     }},
     { id: '18', type: 'roadmap', position: { x: 2350, y: 250 }, data: { 
@@ -221,7 +221,7 @@ export const initialNodes = [
         article_link: "https://blog.newsletterdude.com/making-your-first-sale/",
         category: ROADMAP_CATEGORIES["Sale"],
         tools: ["convertbox"],
-        framework: [],
+        framework: ["Your Number One Goal is to Get a Sale from a Stranger", "Do Not Go Further Until You’ve Made a Sale", "Once You’ve Made a Sale, It’s Time to Scale"],
         newsletters: [],
     }},
 
