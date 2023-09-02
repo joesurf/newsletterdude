@@ -1,5 +1,8 @@
 import { Box, Typography } from '@mui/material'
 import { ResponsiveScatterPlot } from '@nivo/scatterplot'
+import ImageGrid from '../ImageGrid/ImageGrid'
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
+
 
 // make sure parent container have a defined height when using
 // responsive component, otherwise height will be 0 and
@@ -59,8 +62,16 @@ const MyResponsiveScatterPlot = ({ data }) => (
         tooltip={node => {
             return (
                 <Box textAlign="center">
+                    <Box width="100%">
+                        {node.node.data.image_id 
+                        ? <ImageGrid 
+                            src={`${process.env.REACT_APP_SUPABASE_URL}/storage/v1/object/public/NewsletterDude/${node.node.data.image_id}`} 
+                            width="40px"
+                        />
+                        : <QuestionMarkIcon fontSize="large" />}
+                    </Box>
                     <Typography variant="h5" fontWeight="bold">{node.node.data.title}</Typography>
-                    <Typography variant="h6">{node.node.serieId}</Typography>
+                    <Typography variant="h6" sx={{ marginTop: "-5px" }}>{node.node.serieId}</Typography>
                 </Box>
             )
         }}
