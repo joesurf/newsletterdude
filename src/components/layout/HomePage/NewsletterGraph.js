@@ -3,16 +3,16 @@ import { Box, Typography } from '@mui/material'
 import MyResponsiveScatterPlot from '../../UI/ScatterPlot/ScatterPlot'
 import { fetchnewsletterdata } from './NewsletterGraphData'
 
+
 function NewsletterGraph() {
     const [newsletterdata, setNewsletterdata] = useState([])
 
     useEffect(() => {
-        const fetchdata = async () => {
-            fetchnewsletterdata()
-                .then(res => setNewsletterdata(res))
+        const getNewsletterData = async () => {
+            setNewsletterdata(await fetchnewsletterdata())
         }
-        fetchdata()
-    })
+        getNewsletterData()
+    }, [newsletterdata])
   return (
     <Box display="flex" flexDirection="column">
         <Box

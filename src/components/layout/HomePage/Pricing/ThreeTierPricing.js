@@ -29,8 +29,8 @@ const SUBSCRIPTIONS = [
     yearly: 0,
     yearly_price_link: "https://blog.newsletterdude.com/#/portal/signup/free",
     benefits: [
-      "Access to weekly updates",
-      "Access to future discounts",
+      "5 Recommended links and summaries on newsletters daily",
+      "Access to future discounts"
     ],
     available: true,
     free: true,
@@ -45,6 +45,7 @@ const SUBSCRIPTIONS = [
     yearly_price_link: "https://blog.newsletterdude.com/#/portal/signup/6488174e418be50001b0fd66/yearly",
     discounted: true,
     benefits: [
+      "Everything in 𝘉𝘶𝘪𝘭𝘥 𝘓𝘢𝘵𝘦𝘳",
       "Access to building roadmap",
       "≥ 30 articles updated regularly",
       "≥ 50 tools index*",

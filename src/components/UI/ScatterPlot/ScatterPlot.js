@@ -4,8 +4,8 @@ import { ResponsiveScatterPlot } from '@nivo/scatterplot'
 // make sure parent container have a defined height when using
 // responsive component, otherwise height will be 0 and
 // no chart will be rendered.
-const MyResponsiveScatterPlot = ({ data }) => {
-    return (<ResponsiveScatterPlot
+const MyResponsiveScatterPlot = ({ data }) => (
+    <ResponsiveScatterPlot
         data={data}
         margin={{ top: 60, right: 60, bottom: 70, left: 90 }}
         xScale={{ type: 'linear', min: 0, max: 'auto' }}
@@ -20,7 +20,7 @@ const MyResponsiveScatterPlot = ({ data }) => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: '# Subscribers (thousands)',
+            legend: `# Subscribers ('00,000)`,
             legendPosition: 'middle',
             legendOffset: 46
         }}
@@ -68,7 +68,7 @@ const MyResponsiveScatterPlot = ({ data }) => {
         //     window.open(node.data.link, '_blank', 'noreferrer')
         // }}
     />
-    )
-}
+)
+
 
 export default MyResponsiveScatterPlot

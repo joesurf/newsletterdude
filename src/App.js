@@ -13,6 +13,7 @@ import BlogPage from './pages/BlogPage';
 import ToolsPage from './pages/ToolsPage';
 import DashboardPage from './pages/DashboardPage';
 import CommunityPage from './pages/CommunityPage';
+import SubscribePage from './pages/SubscribePage';
 import Error404Page from './pages/Error404Page';
 
 import Header from './components/layout/General/Header/Header';
@@ -62,6 +63,7 @@ function Root() {
                 {/* <Box sx={styles.container}> */}
                   <Routes>
                     <Route path="/" element={<HomePage />} />
+                    <Route path="/subscribe" element={<SubscribePage />} />
                     <Route path="/roadmap" element={<RoadmapPage />} />
                     <Route path="/blog" element={<BlogPage />} />
                     <Route path="/tools" element={<ToolsPage />} />

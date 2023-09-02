@@ -19,16 +19,16 @@ const convertSupabaseDataToGraphData = (data) => {
   
   for (var i = 0; i <  data.length; i++) {
     let newsletterInfo = data[i]
+    if(newsletterInfo.subscribers === 0 || newsletterInfo.revenue === 0) continue
     newsletterInfo["x"] = newsletterInfo.subscribers
     newsletterInfo["y"] = newsletterInfo.revenue
     
     graphdata[newsletterInfo.category]["data"].push(newsletterInfo) 
   }
-
   return Object.values(graphdata)
 }
 
-export const fetchnewsletterdata = async ()=>{
+export const fetchnewsletterdata = async () => {
   try {
       let { data, error, status } = await supabase
           .from("Newsletter")
@@ -39,12 +39,13 @@ export const fetchnewsletterdata = async ()=>{
       }
 
       if (data) {
-          return convertSupabaseDataToGraphData(data);
+         return convertSupabaseDataToGraphData(data);
+      } else {
+        return []
       }
   } catch (error) {
       console.log(error.message);
   } finally {
       // console.log(user);
-      return []
   }
 };
