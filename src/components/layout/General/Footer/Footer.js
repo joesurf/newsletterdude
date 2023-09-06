@@ -1,7 +1,7 @@
-// import InstagramIcon from "@mui/icons-material/Instagram";
+import InstagramIcon from "@mui/icons-material/Instagram";
 // import TwitterIcon from '@mui/icons-material/Twitter';
 import Logo from "../../../../assets/logos/ND_Round_LightPNG.png";
-import { Typography, Grid, Box } from "@mui/material";
+import { Typography, Grid, Link, Box } from "@mui/material";
 
 
 const Footer = () => {
@@ -37,16 +37,16 @@ const Footer = () => {
               hey@joesurf.io
             </Typography>
             <Grid container sx={{ mt: "5px", textAlign: "center" }}>
-              {/* <Box>
+              <Box>
                 <Link
-                  href="https://www.instagram.com/joesurfthedude/"
+                  href="https://www.instagram.com/newsletterdude/"
                   underline="none"
                   target="_blank"
                   rel="noopener"
                 >
                   <InstagramIcon fontSize="large" />
                 </Link>
-              </Box> */}
+              </Box>
             </Grid>
         </Grid>
       </Grid>
