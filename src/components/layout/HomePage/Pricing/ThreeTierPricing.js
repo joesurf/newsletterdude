@@ -52,7 +52,7 @@ const SUBSCRIPTIONS = [
       "Access to private community*", 
       "Access to interviews and case studies*"
     ],
-    available: true,
+    available: false,
     free: false,
   },
   {

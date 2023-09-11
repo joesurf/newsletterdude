@@ -8,7 +8,7 @@ import Features from "../components/layout/HomePage/Features/Features";
 import Benefits from "../components/layout/HomePage/Benefits";
 import NewsletterGraph from "../components/layout/HomePage/NewsletterGraph";
 import FAQ from "../components/layout/HomePage/FAQ/FAQ";
-import Testimonials from "../components/layout/HomePage/Testimonials/Testimonials";
+// import Testimonials from "../components/layout/HomePage/Testimonials/Testimonials";
 
 
 const styles = {
@@ -42,7 +42,7 @@ const HomePage = () => {
         <ThreeTierPricing />
       </Box>
 
-      <Testimonials />
+      {/* <Testimonials /> */}
 
       <FAQ />
     </Fragment>
