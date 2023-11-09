@@ -16,6 +16,7 @@ export default function CommunityJoinButton() {
                     onClick={() => {window.open("https://blog.newsletterdude.com/#/portal/signup/free", "_blank")}} 
                     sx={{ backgroundColor: colors.grey[100], color: colors.grey[900] }}
                     className="btn btn-1"
+                    disabled
                 >
                     <PeopleOutlineIcon /><Typography variant="h5" paddingX="10px">Join the newsletter community waitlist</Typography><PeopleOutlineIcon />
                 </Button>

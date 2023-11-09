@@ -20,9 +20,9 @@ const MENU_SECTIONS = [
   {
     "title": "Community",
   },
-  {
-    "title": "Blog",
-  },
+  // {
+  //   "title": "Blog",
+  // },
 ]
 
 
