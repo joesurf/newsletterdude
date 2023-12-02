@@ -19,9 +19,9 @@ function RatingAvatar({ testimonials }) {
 
   useEffect(() => {
       const calculateAverageRating = (testimonials) => {
-      const ratings = testimonials.map((testimonial) => testimonial.rating).reduce((accumulator, currentValue) => {
+      const ratings = Array.isArray(testimonials) ? testimonials.map((testimonial) => testimonial.rating).reduce((accumulator, currentValue) => {
         return accumulator + currentValue
-      },0);
+      },0) : 0;
       return ratings / testimonials.length;
     }
     if (testimonials.length !== 0) {
