@@ -42,7 +42,7 @@ function NewsletterGraph() {
             </Typography>
         </Box>
         <Box width="90%" height="500px" margin="auto">
-            <MyResponsiveScatterPlot data={newsletterdata} />
+            {newsletterdata ? <MyResponsiveScatterPlot data={newsletterdata} /> : <></>}
         </Box>
     </Box>
   )
